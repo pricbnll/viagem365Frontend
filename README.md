@@ -125,7 +125,8 @@ Caso tenha alguma dúvida!!
 
 ## 🧑🏻‍🏫 Professor para auxilio
 
-* **Nicholas Macedo** - [GitHub](https://github.com/nicholasmacedoo)
+**Nicholas Macedo** - [GitHub](https://github.com/nicholasmacedoo)
+**Douglas Cavalcante** - [GitHub]([https://github.com/nicholasmacedoo](https://github.com/douglas-cavalcante))
 
 
 ## 👀 Melhorias
