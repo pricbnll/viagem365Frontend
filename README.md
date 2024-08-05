@@ -55,11 +55,10 @@ VITE v5.3.2 ready in 168 ms
 ➜ Network: use --host 
 to expose ➜ press h + enter to show help
 ```
-Se quiser trocar de porta:
-
+Instalado Bootstrap com a importação no arquivo main.jsx
 ```
-
-Instalado Bootstrap com a importação no arquivo main.jsx > import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+```
 ```
 npm install bootstrap@5.3.3
 ```
@@ -68,6 +67,7 @@ Instalei Reach Router Dom
 ```
 npm install react-router-dom
 ```
+
 Instalei Reach Hook Form
 ```
 npm install react-hook-form
@@ -77,7 +77,8 @@ Instalei Json Server para popular
 ```
 npm i json-server --save-dev
 ```
-Para rodar
+
+Criei um arquiv db.json e para rodar:
 ```
 npx json-server db.json
 ```
@@ -87,7 +88,7 @@ npx json-server db.json
 
 ## 🌊 GitFlow:
 
-Iniciei na main mesmo e organizei as pastas, deletei css, instalei bootstrap e 
+Iniciei na main mesmo e organizei as pastas.
 
 
 
@@ -95,10 +96,9 @@ Iniciei na main mesmo e organizei as pastas, deletei css, instalei bootstrap e
 
 Caso tenha alguma dúvida!!
 
+[Reach Router Dom](https://reactrouter.com/en/main/start/tutorial)
+[Reack Hook Form](https://react-hook-form.com/get-started)
 [json-server](https://www.npmjs.com/package/json-server)
-
-
-
 [React Leaflet](https://react-leaflet.js.org/)
 
   
