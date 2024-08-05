@@ -88,7 +88,14 @@ npx json-server db.json
 
 ## 🌊 GitFlow:
 
-Iniciei na main mesmo e organizei as pastas.
+Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
+
+DEVELOP: 
+- Criei documento db.json como cadastros falsos
+- criei pastas:
+  - components: login, logout e css
+  - pages com pastas especificas com .jsx e css: dashboard, Home, e registes(cadastro)
+  - route: como a rotas
 
 
 
@@ -96,9 +103,9 @@ Iniciei na main mesmo e organizei as pastas.
 
 Caso tenha alguma dúvida!!
 
-[Reach Router Dom](https://reactrouter.com/en/main/start/tutorial)
+[React Router Dom](https://reactrouter.com/en/main/start/tutorial)
 
-[Reack Hook Form](https://react-hook-form.com/get-started)
+[React Hook Form](https://react-hook-form.com/get-started)
 
 [json-server](https://www.npmjs.com/package/json-server)
 
