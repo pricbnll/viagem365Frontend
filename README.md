@@ -88,7 +88,14 @@ npx json-server db.json
 
 ## 🌊 GitFlow:
 
-Iniciei na main mesmo e organizei as pastas.
+Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
+
+DEVELOP: 
+- Criei documento db.json como cadastros falsos
+- criei pastas:
+  - components: login, logout e css
+  - pages com pastas especificas com .jsx e css: dashboard, Home, e registes(cadastro)
+  - route: como a rotas e seus links
 
 
 
