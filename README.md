@@ -95,7 +95,7 @@ DEVELOP:
 - criei pastas:
   - components: login, logout e css
   - pages com pastas especificas com .jsx e css: dashboard, Home, e registes(cadastro)
-  - route: como a rotas
+  - route: como a rotas e seus links
 
 
 
