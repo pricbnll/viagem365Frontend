@@ -1,0 +1,19 @@
+:root {
+    --terracota: #872F3F;
+    --orange: #E46D48;
+    --light-orange: #f7ab8f;
+    --dark-orange: #ed5e2a;
+    --black: #000000;
+    --bege: #E3D9DF;
+    --dark-yellow: #C89065;
+    --light-blue: #97C3DA;
+    --brown: #2A2031;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif 
+}

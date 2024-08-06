@@ -1,5 +1,15 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "../pages/home/Home"
+
 function AppRoutes() {
-  return <></>;
+  return (
+    <BrowserRouter>
+      <Routes>
+       <Route path= '/' element={<Home />}/>
+      
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default AppRoutes;
+export default AppRoutes
