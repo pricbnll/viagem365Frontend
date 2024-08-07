@@ -83,6 +83,14 @@ Criei um arquiv db.json e para rodar:
 npx json-server db.json
 ```
 
+✅ Algumas páginas usei validações com YUP
+
+Instalar Yup `npm install @hookform/resolvers yup`
+```
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+```
+
 
 
 
@@ -109,6 +117,8 @@ Caso tenha alguma dúvida!!
 
 [json-server](https://www.npmjs.com/package/json-server)
 
+[YUP resolver](https://www.npmjs.com/package/@hookform/resolvers))
+
 [React Leaflet](https://react-leaflet.js.org/)
 
   
@@ -127,6 +137,7 @@ Caso tenha alguma dúvida!!
 - Vite
 - React
 - Json-server - para simular uma API fake com cadastro de usuários
+- YUP - para validações
 
   
 
