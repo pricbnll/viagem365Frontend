@@ -38,8 +38,8 @@ function Login() {
     console.log(userData);
   }
 
-  function handleLogin() {
-    navigate("/login");
+  function handleRegister() {
+    navigate("/cadastro");
   }
 
   console.log(watch("password"));
@@ -80,7 +80,7 @@ function Login() {
             <button
               type="button"
               className={styles.btnRegister}
-              onClick={handleLogin}
+              onClick={handleRegister}
             >
               Cadastrar
             </button>
