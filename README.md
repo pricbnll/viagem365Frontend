@@ -16,7 +16,7 @@ A Viagem365 deseja automatizar algumas ações de atendimento, criando um sistem
   ## 📉 Diagrama telas
 
 <p>
-  <img src = "./src/assets/Diagrama de telas.png">
+  <img src = "./viagem365/src/assets/Diagrama de telas.png">
 </p>
 
 ## 🤖 Como rodar o repositório:
@@ -99,6 +99,14 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 ```
 
+✅ Algumas páginas usei validações com YUP
+
+Instalar Yup `npm install @hookform/resolvers yup`
+```
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+```
+
 
 
 
@@ -109,13 +117,8 @@ Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
 DEVELOP: 
 - Criei documento db.json como cadastros falsos
 - criei pastas:
-<<<<<<< HEAD
   - components: login, logout e css
-  - pages com pastas especificas com .jsx e css: dashboard, Home, e registes(cadastro)
-=======
-  - components: logout
   - pages com pastas especificas com .jsx e css: dashboard, Home, Login e register(cadastro)
->>>>>>> 4d14ed275e13c9d8d30bdf863c72a64685fd8bd2
   - route: como a rotas e seus links
 
 
