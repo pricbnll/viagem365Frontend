@@ -78,9 +78,17 @@ Instalei Json Server para popular
 npm i json-server --save-dev
 ```
 
-Criei um arquiv db.json e para rodar:
+Criei um arquivo db.json e para rodar:
 ```
 npx json-server db.json
+```
+
+✅ Algumas páginas usei validações com YUP
+
+Instalar Yup `npm install @hookform/resolvers yup`
+```
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
 ```
 
 
@@ -93,8 +101,8 @@ Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
 DEVELOP: 
 - Criei documento db.json como cadastros falsos
 - criei pastas:
-  - components: login, logout e css
-  - pages com pastas especificas com .jsx e css: dashboard, Home, e registes(cadastro)
+  - components: logout
+  - pages com pastas especificas com .jsx e css: dashboard, Home, Login e register(cadastro)
   - route: como a rotas e seus links
 
 
@@ -108,6 +116,8 @@ Caso tenha alguma dúvida!!
 [React Hook Form](https://react-hook-form.com/get-started)
 
 [json-server](https://www.npmjs.com/package/json-server)
+
+[YUP resolver](https://www.npmjs.com/package/@hookform/resolvers))
 
 [React Leaflet](https://react-leaflet.js.org/)
 
@@ -127,6 +137,7 @@ Caso tenha alguma dúvida!!
 - Vite
 - React
 - Json-server - para simular uma API fake com cadastro de usuários
+- YUP - para validações
 
   
 
