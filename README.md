@@ -78,7 +78,7 @@ Instalei Json Server para popular
 npm i json-server --save-dev
 ```
 
-Criei um arquiv db.json e para rodar:
+Criei um arquivo db.json e para rodar:
 ```
 npx json-server db.json
 ```
@@ -101,8 +101,8 @@ Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
 DEVELOP: 
 - Criei documento db.json como cadastros falsos
 - criei pastas:
-  - components: login, logout e css
-  - pages com pastas especificas com .jsx e css: dashboard, Home, e registes(cadastro)
+  - components: logout
+  - pages com pastas especificas com .jsx e css: dashboard, Home, Login e register(cadastro)
   - route: como a rotas e seus links
 
 
