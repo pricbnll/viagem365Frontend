@@ -1,93 +1,24 @@
-h1 {
-  color: var(--bege);
-  text-align: center;
-}
-
-p{
-  color: var(--light-orange);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  text-align: center;
-}
-
 .container {
-    background-color: var(--terracota);
-    font-size: 1.2rem;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  .imageContainer {
-    width: 55%;
-    height: 100%;
-  }
-  
-  .imageContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .formDiv {
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .formContainer {
-    display: flex;
-    flex-direction: column;
-    color: var(--bege);
-    width: 400px;
-    gap: 20px
-  }
+  background-color: var(--terracota);
+  font-size: 1.2rem;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
 
-  .formLabel {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
+.imageContainer {
+  width: 60%; /* Ajuste para 60% */
+}
 
-  .formControl {
-    height: 50px;
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid var(--bege);
-    font-size: 1.1rem;
-    color: var(--brown);
-    padding: 15px;
-  }
-  
-  span {
-    display: block;
-    color: var(--dark-orange);
-    margin-top: 10px;
-  }
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .btnLogin {
-    height: 50px;
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid var(--light-orange);
-    background-color: var(--light-orange);
-    font-size: 1.1rem;
-    color: var(--brown);
-  }
-
-  .btnRegister {
-    height: 50px;
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid var(--dark-orange);
-    background-color: var(--dark-orange);
-    font-size: 1.1rem;
-    color: var(--brown);
-  }
-
-  .greyQoRegular {
-    font-family: "Grey Qo", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+.formDiv {
+  width: 40%; /* Ajuste para 40% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
