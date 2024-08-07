@@ -78,10 +78,18 @@ Instalei Json Server para popular
 npm i json-server --save-dev
 ```
 
-Criei um arquiv db.json e para rodar:
+Criei um arquivo db.json e para rodar:
 ```
 npx json-server db.json
 ```
+✅ Algumas páginas usei validações com YUP
+
+Instalar Yup `npm install @hookform/resolvers yup`
+```
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+```
+
 
 
 
