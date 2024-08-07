@@ -1,8 +1,4 @@
 html, body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     background-color: var(--terracota);
     font-size: 1.2rem;
   }
@@ -47,11 +43,12 @@ html, body {
     flex-direction: column;
     color: var(--bege);
     width: 400px;
-    gap: 30px
+    gap: 20px
   }
 
   .formLabel {
-    margin-bottom: 20px;
+    display: block;
+    margin-bottom: 10px;
   }
   
 
@@ -66,8 +63,9 @@ html, body {
   }
   
   span {
+    display: block;
     color: var(--dark-orange);
-    margin-top: 50px;
+    margin-top: 10px;
   }
 
   .btnLogin {
