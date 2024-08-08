@@ -1,6 +1,6 @@
 import "./login.module.css";
 
-function Login() {
+function Logout() {
   return (
     <>
       <h1>Logout</h1>
@@ -8,4 +8,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Logout;
