@@ -61,18 +61,18 @@ function Login() {
               <input
                 type="text"
                 className={styles.formControl}
-                {...register("email")}
+                {...register("email", { required: true })}
               />
-              <span>{errors.email?.message}</span>
+              <span className={styles.errorMessage}>{errors.email?.message}</span>
             </div>
             <div>
               <label className={styles.formLabel}>Senha</label>
               <input
                 type="password"
                 className={styles.formControl}
-                {...register("password")}
+                {...register("password", { required: true })}
               />
-              <span>{errors.password?.message}</span>
+              <span className={styles.errorMessage}>{errors.password?.message}</span>
             </div>
             <button type="submit" className={styles.btnLogin}>
               Entrar

@@ -15,20 +15,13 @@
     "@hookform/resolvers": "^3.9.0",
     "bootstrap": "^5.3.3",
     "glob": "^11.0.0",
-<<<<<<< HEAD
-=======
     "lru-cache": "^11.0.0",
->>>>>>> 4d14ed275e13c9d8d30bdf863c72a64685fd8bd2
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.2",
     "react-router-dom": "^6.26.0",
-<<<<<<< HEAD
     "rimraf": "^6.0.1",
     "yup": "^1.4.0"
-=======
-    "rimraf": "^6.0.1"
->>>>>>> 4d14ed275e13c9d8d30bdf863c72a64685fd8bd2
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
