@@ -42,7 +42,6 @@ const schema = yup
 
 function RegisterUser() {
   const navigate = useNavigate();
-  // const [submitError, setSubmitError] = useState("");
   // const [cepError, setCepError] = useState("");
   // const [addressLoading, setAddressLoading] = useState(false);
 
@@ -149,6 +148,7 @@ function RegisterUser() {
                 autoComplete="postal-code"
                 // onChange={handleCepChange}
               />
+              <span className={styles.errorMessage}>{errors.cep?.message}</span> 
               {/* <span className={styles.errorMessage}>{errors.cep?.message || cepError}</span> */}
             </div>
             <div>

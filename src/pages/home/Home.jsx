@@ -1,6 +1,5 @@
 import mapaViagem from "../../assets/mapa-viagem.jpg";
-import Login from "../Login/Login";
-
+import Login from "../login/Login";
 import styles from "./home.module.css";
 
 
