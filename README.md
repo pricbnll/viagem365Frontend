@@ -83,6 +83,8 @@ Criei um arquivo db.json e para rodar:
 ```
 npx json-server db.json
 ```
+No package-json fiz um script para rodar com `npm server`na porta 3333
+``` "server": "npx json-server db.json -p 3333"``` 
 
 ✅ Algumas páginas usei validações com YUP
 
