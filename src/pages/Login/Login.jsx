@@ -38,8 +38,8 @@ function Login() {
     console.log(userData);
   }
 
-  function handleLogin() {
-    navigate("/login");
+  function handleRegister() {
+    navigate("/cadastro");
   }
 
   console.log(watch("password"));
@@ -64,7 +64,7 @@ function Login() {
                 placeholder="Digite sua email"
                 {...register("email")}
               />
-              <span>{errors.email?.message}</span>
+              <span className={styles.errorMessage}>{errors.email?.message}</span>
             </div>
             <div>
               <label className={styles.formLabel}>Senha</label>
@@ -74,7 +74,7 @@ function Login() {
                 placeholder="Digite sua senha"
                 {...register("password")}
               />
-              <span>{errors.password?.message}</span>
+              <span className={styles.errorMessage}>{errors.password?.message}</span>
             </div>
             <button type="submit" className={styles.btnLogin}>
               Entrar
@@ -82,7 +82,7 @@ function Login() {
             <button
               type="button"
               className={styles.btnRegister}
-              onClick={handleLogin}
+              onClick={handleRegister}
             >
               Cadastrar
             </button>
