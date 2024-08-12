@@ -181,6 +181,7 @@ function RegisterUser() {
                 autoComplete="postal-code"
                 // onChange={handleCepChange}
               />
+              <span className={styles.errorMessage}>{errors.cep?.message}</span> 
               {/* <span className={styles.errorMessage}>{errors.cep?.message || cepError}</span> */}
             </div>
             <div>

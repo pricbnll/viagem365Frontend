@@ -8,6 +8,7 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
        <Route path= '/' element={<Home />}/>
+       <Route path= '/home' element={<Home />}/>
        <Route path= '/cadastro' element={<RegisteUser/>}/>
       
       </Routes>
