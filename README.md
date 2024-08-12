@@ -16,7 +16,7 @@ A Viagem365 deseja automatizar algumas ações de atendimento, criando um sistem
   ## 📉 Diagrama telas
 
 <p>
-  <img src = "./viagem365/src/assets/Diagrama de telas.png">
+  <img src = "./src/assets/Diagrama de telas.png"
 </p>
 
 ## 🤖 Como rodar o repositório:
@@ -26,7 +26,7 @@ Clone o repositório em sua máquina em uma pasta local
 `Git clone https://github.com/pricbnll/viagem365Frontend.git`
 
 Criei uma pasta com Vite ```npm create vite@latest```. Coloquei um nome de pasta (viagem365) que foi criado. Escolhi: React e JavaScript
-Após isso transeferi todos os arquivos para a pasta viagem365Frontend e deletei esta que ficoi vazia, assim so tenho uma pasta com tudo - dependência Vite e git.
+Após isso transferi todos os arquivos para a pasta viagem365Frontend e deletei esta que ficou vazia, assim so tenho uma pasta com tudo - dependência Vite e git.
 
 Agora você, após clonar, rode os seguintes comandos para instalar as dependências que estão nas pastas 'package.json'.
 ````
@@ -55,6 +55,7 @@ VITE v5.3.2 ready in 168 ms
 ➜ Network: use --host 
 to expose ➜ press h + enter to show help
 ```
+
 Instalado Bootstrap com a importação no arquivo main.jsx
 ```
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -73,7 +74,7 @@ Instalei Reach Hook Form
 npm install react-hook-form
 ```
 
-Instalei Json Server para popular 
+Instalei Json Server para popular
 ```
 npm i json-server --save-dev
 ```
@@ -81,22 +82,6 @@ npm i json-server --save-dev
 Criei um arquivo db.json e para rodar:
 ```
 npx json-server db.json
-```
-✅ Algumas páginas usei validações com YUP
-
-Instalar Yup `npm install @hookform/resolvers yup`
-```
-import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
-```
-
-
-✅ Algumas páginas usei validações com YUP
-
-Instalar Yup `npm install @hookform/resolvers yup`
-```
-import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
 ```
 
 ✅ Algumas páginas usei validações com YUP
@@ -117,9 +102,14 @@ Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
 DEVELOP: 
 - Criei documento db.json como cadastros falsos
 - criei pastas:
-  - components: login, logout e css
+  - components: logout
   - pages com pastas especificas com .jsx e css: dashboard, Home, Login e register(cadastro)
   - route: como a rotas e seus links
+ 
+feature/home - fiz a tela inicial com todos os elementos: imagem e formulário de login  + botão de cadastrar
+feature/login - separei a home em duas rotas: Home e Login. criei com componente Login e coloquei a regra de negócio dentro
+feature/registerUser - Criei uma pagina de cadastro "/cadastro" que direciona o cliente se não possui email e senha autenticado será mostrado uma pagina para se cadastrar com Nome,Sexo,CPF,Data de Nascimento,E-mail,Senha,Endereço (usar ViaCEP) - opcional...
+feature/json-server - criei a pasta ds.json e  uma lista com no mínimo 5 usuários, usei o [4Devs](https://www.4devs.com.br/gerador_de_pessoas) - Ferramentas Online Grátis para gerar os usuários.
 
 
 
@@ -166,6 +156,7 @@ Caso tenha alguma dúvida!!
 ## 👀 Melhorias
 
 - Implementar responsividade para adaptação em telas grandes (como monitores) e telas pequenas (como smartphones e tablets).
+- Na tela de cadastro, ao colocar o CEP já informa o endereço.
 - Utilizar a biblioteca Leaflet para criar um mapa e localizar os pontos de interesses.
 
 
