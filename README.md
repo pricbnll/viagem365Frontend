@@ -80,7 +80,7 @@ npm i json-server --save-dev
 ```
 
 Criei um arquivo db.json e para rodar:
-No package-json fiz um script para rodar com `npm server` na porta 3333
+No package-json fiz um script para rodar com `npm run server` na porta 3333
 ``` "server": "npx json-server db.json -p 3333"``` 
 ```
 Endpoints:
