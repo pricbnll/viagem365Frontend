@@ -87,6 +87,22 @@ Endpoints:
 http://localhost:3333/users
 http://localhost:3333/localidade
 ```
+✅ Algumas páginas usei validações com YUP
+
+Instalar Yup `npm install @hookform/resolvers yup`
+```
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+```
+
+
+✅ Algumas páginas usei validações com YUP
+
+Instalar Yup `npm install @hookform/resolvers yup`
+```
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+```
 
 ✅ Algumas páginas usei validações com YUP
 
@@ -106,7 +122,7 @@ Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
 DEVELOP: 
 - Criei documento db.json como cadastros falsos
 - criei pastas:
-  - components: logout
+  - components: login, logout e css
   - pages com pastas especificas com .jsx e css: dashboard, Home, Login e register(cadastro)
   - route: como a rotas e seus links
  
