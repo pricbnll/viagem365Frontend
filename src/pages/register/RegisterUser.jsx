@@ -120,7 +120,7 @@ function RegisterUser() {
   // }
 
   function handleLogin() {
-    navigate("/home");
+    navigate("/");
   }
 
   return (
@@ -248,7 +248,7 @@ function RegisterUser() {
                 {...register("password")}
                 autoComplete="new-password"
               />
-              <span>{errors.password?.message}</span>
+              <span className={styles.errorMessage}>{errors.password?.message}</span>
             </div>
             {/* {submitError && (
               <div className={styles.submitError}>{submitError}</div>
@@ -257,14 +257,14 @@ function RegisterUser() {
               Cadastrar
             </button>
             <p>
-              Já possui conta? Faça seu
+              Já possui conta? Faça seu 
               <span
                 className={styles.spanLogin}
                 type="button"
                 onClick={handleLogin}
               >
                 login
-              </span>
+              </span> .
             </p>
           </form>
         </div>
