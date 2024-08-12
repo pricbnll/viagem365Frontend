@@ -80,11 +80,13 @@ npm i json-server --save-dev
 ```
 
 Criei um arquivo db.json e para rodar:
-```
-npx json-server db.json
-```
-No package-json fiz um script para rodar com `npm server`na porta 3333
+No package-json fiz um script para rodar com `npm server` na porta 3333
 ``` "server": "npx json-server db.json -p 3333"``` 
+```
+Endpoints:
+http://localhost:3333/users
+http://localhost:3333/localidade
+```
 
 ✅ Algumas páginas usei validações com YUP
 
@@ -111,7 +113,7 @@ DEVELOP:
 feature/home - fiz a tela inicial com todos os elementos: imagem e formulário de login  + botão de cadastrar
 feature/login - separei a home em duas rotas: Home e Login. criei com componente Login e coloquei a regra de negócio dentro
 feature/registerUser - Criei uma pagina de cadastro "/cadastro" que deireciona o cliente se não possui email e senha autenticado será mostrado uma pagina para se cadastrar com Nome,Sexo,CPF,Data de Nascimento,E-mail,Senha,Endereço (usar ViaCEP) - opcional...
-feature/json-server - criei a pasta ds.json e  uma lista com no mínimo 5 usuários, use o 4Devs - Ferramentas Online Grátis para gerar os usuários.
+feature/json-server - criei a pasta ds.json e  uma lista com no mínimo 5 usuários, use o 4Devs - Ferramentas Online Grátis para gerar os usuários. 
 
 
 
