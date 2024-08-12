@@ -26,7 +26,7 @@ Clone o repositório em sua máquina em uma pasta local
 `Git clone https://github.com/pricbnll/viagem365Frontend.git`
 
 Criei uma pasta com Vite ```npm create vite@latest```. Coloquei um nome de pasta (viagem365) que foi criado. Escolhi: React e JavaScript
-Após isso transeferi todos os arquivos para a pasta viagem365Frontend e deletei esta que ficoi vazia, assim so tenho uma pasta com tudo - dependência Vite e git.
+Após isso transferi todos os arquivos para a pasta viagem365Frontend e deletei esta que ficou vazia, assim so tenho uma pasta com tudo - dependência Vite e git.
 
 Agora você, após clonar, rode os seguintes comandos para instalar as dependências que estão nas pastas 'package.json'.
 ````
@@ -108,8 +108,8 @@ DEVELOP:
  
 feature/home - fiz a tela inicial com todos os elementos: imagem e formulário de login  + botão de cadastrar
 feature/login - separei a home em duas rotas: Home e Login. criei com componente Login e coloquei a regra de negócio dentro
-feature/registerUser - Criei uma pagina de cadastro "/cadastro" que deireciona o cliente se não possui email e senha autenticado será mostrado uma pagina para se cadastrar com Nome,Sexo,CPF,Data de Nascimento,E-mail,Senha,Endereço (usar ViaCEP) - opcional...
-feature/json-server - criei a pasta ds.json e  uma lista com no mínimo 5 usuários, use o 4Devs - Ferramentas Online Grátis para gerar os usuários.
+feature/registerUser - Criei uma pagina de cadastro "/cadastro" que direciona o cliente se não possui email e senha autenticado será mostrado uma pagina para se cadastrar com Nome,Sexo,CPF,Data de Nascimento,E-mail,Senha,Endereço (usar ViaCEP) - opcional...
+feature/json-server - criei a pasta ds.json e  uma lista com no mínimo 5 usuários, usei o [4Devs](https://www.4devs.com.br/gerador_de_pessoas) - Ferramentas Online Grátis para gerar os usuários.
 
 
 
