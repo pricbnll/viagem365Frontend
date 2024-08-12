@@ -137,6 +137,7 @@ function RegisterUser() {
               <input
                 type="text"
                 className={styles.formControl}
+                placeholder="Digite seu nome completo"
                 {...register("nome")}
                 autoComplete="name"
               />
@@ -157,6 +158,7 @@ function RegisterUser() {
               <input
                 type="text"
                 className={styles.formControl}
+                placeholder="Digite seu CPF"
                 {...register("cpf")}
                 autoComplete="cpf"
               />
@@ -175,6 +177,7 @@ function RegisterUser() {
               <input
                 type="text"
                 className={styles.formControl}
+                placeholder="Digite seu CEP"
                 {...register("cep")}
                 autoComplete="postal-code"
                 // onChange={handleCepChange}
@@ -235,6 +238,7 @@ function RegisterUser() {
               <input
                 type="text"
                 className={styles.formControl}
+                placeholder="Digite seu email"
                 {...register("email")}
                 autoComplete="email"
               />
@@ -245,6 +249,7 @@ function RegisterUser() {
               <input
                 type="password"
                 className={styles.formControl}
+                placeholder="Digite sua senha"
                 {...register("password")}
                 autoComplete="new-password"
               />

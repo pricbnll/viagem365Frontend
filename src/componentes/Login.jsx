@@ -61,6 +61,7 @@ function Login() {
               <input
                 type="text"
                 className={styles.formControl}
+                placeholder="Digite seu email"
                 {...register("email", { required: true })}
               />
               <span className={styles.errorMessage}>{errors.email?.message}</span>
@@ -70,6 +71,7 @@ function Login() {
               <input
                 type="password"
                 className={styles.formControl}
+                placeholder="Digite sua senha"
                 {...register("password", { required: true })}
               />
               <span className={styles.errorMessage}>{errors.password?.message}</span>
