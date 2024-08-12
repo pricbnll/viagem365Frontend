@@ -55,6 +55,7 @@ VITE v5.3.2 ready in 168 ms
 ➜ Network: use --host 
 to expose ➜ press h + enter to show help
 ```
+
 Instalado Bootstrap com a importação no arquivo main.jsx
 ```
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -73,7 +74,7 @@ Instalei Reach Hook Form
 npm install react-hook-form
 ```
 
-Instalei Json Server para popular 
+Instalei Json Server para popular
 ```
 npm i json-server --save-dev
 ```
@@ -104,6 +105,11 @@ DEVELOP:
   - components: logout
   - pages com pastas especificas com .jsx e css: dashboard, Home, Login e register(cadastro)
   - route: como a rotas e seus links
+ 
+feature/home - fiz a tela inicial com todos os elementos: imagem e formulário de login  + botão de cadastrar
+feature/login - separei a home em duas rotas: Home e Login. criei com componente Login e coloquei a regra de negócio dentro
+feature/registerUser - Criei uma pagina de cadastro "/cadastro" que deireciona o cliente se não possui email e senha autenticado será mostrado uma pagina para se cadastrar com Nome,Sexo,CPF,Data de Nascimento,E-mail,Senha,Endereço (usar ViaCEP) - opcional...
+feature/json-server
 
 
 
