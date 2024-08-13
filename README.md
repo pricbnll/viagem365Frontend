@@ -92,6 +92,10 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 ```
 
+Instalei a biblioteca 'prop-types' para incluir validações
+````
+npm install prop-types
+````
 
 
 

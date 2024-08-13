@@ -2,10 +2,8 @@ import tourist from "../../assets/tourist-pointing-lateral.jpg";
 import styles from "./register.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-// import { useEffect, useState } from "react";
 import { useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-// import { useForm, setValue } from "react-hook-form";
 import { useForm} from "react-hook-form";
 
 const schema = yup
