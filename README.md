@@ -111,9 +111,13 @@ DEVELOP:
   - route: como a rotas e seus links
  
 *feature/home - fiz a tela inicial com todos os elementos: imagem e formulário de login  + botão de cadastrar
+
 *feature/login - separei a home em duas rotas: Home e Login. Na pagina de Login,coloquei a regra de negócio dentro
+
 *feature/registerUser - Criei uma pagina de cadastro "/cadastro" que direciona o cliente se não possui email e senha autenticado será mostrado uma pagina para se cadastrar com Nome,Sexo,CPF,Data de Nascimento,E-mail,Senha,Endereço (usar ViaCEP) - opcional...
+
 *feature/json-server - criei a pasta ds.json e  uma lista com no mínimo 5 usuários, usei o [4Devs](https://www.4devs.com.br/gerador_de_pessoas) - Ferramentas Online Grátis para gerar os usuários.
+
 *feature/auth-context - criei uma pasta 'context' com um 'auth.jsx', 
 
 
