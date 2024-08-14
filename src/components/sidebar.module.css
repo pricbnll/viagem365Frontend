@@ -1,0 +1,48 @@
+.container {
+  width: 20%;
+  background-color: var(--terracota);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.imageContainer {
+  width: 15%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer img {
+  width: 80px;
+}
+
+.nav {
+    min-width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+  color: var(--bege);
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btnLogout {
+  height: 50px;
+  width: 80px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  color: var(--brown);
+  border: 1px solid var(--light-orange);
+  background-color: var(--light-orange);
+}
