@@ -2,10 +2,8 @@ import tourist from "../../assets/tourist-pointing-lateral.jpg";
 import styles from "./register.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-// import { useEffect, useState } from "react";
 import { useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-// import { useForm, setValue } from "react-hook-form";
 import { useForm} from "react-hook-form";
 
 const schema = yup
@@ -60,6 +58,39 @@ function RegisterUser() {
   function onSubmit(userData) {
     console.log(userData);
   }
+  // async function onSubmit(userData) {
+  //   try {
+  //     const responseEmail = await fetch(
+  //       `http://localhost:3001/users?email=${userData.email}`
+  //     );
+  //     const emailData = await responseEmail.json();
+  //     if (emailData.length > 0) {
+  //       setSubmitError("O email já está cadastrado.");
+  //       return;
+  //     }
+
+  //     const responseCpf = await fetch(
+  //       `http://localhost:3001/users?cpf=${userData.cpf}`
+  //     );
+  //     const cpfData = await responseCpf.json();
+  //     if (cpfData.length > 0) {
+  //       setSubmitError("O CPF já está cadastrado.");
+  //       return;
+  //     }
+
+  //     await fetch("http://localhost:3001/users", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(userData),
+  //     });
+
+  //     navigate("/home");
+  //   } catch (error) {
+  //     console.error("Erro ao cadastrar usuário:", error);
+  //   }
+  // }
 
   // async function handleCepChange(e) {
   //   const cep = e.target.value;
