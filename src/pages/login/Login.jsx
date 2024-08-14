@@ -34,9 +34,9 @@ function Login() {
   const onSubmit = async (data) => {
     const success = await login(data.email, data.password);
     if (success) {
-      navigate("/home");
+      navigate("/dashboard");
     } else {
-      alert("Email ou senha não cadastrados.");
+      navigate("/cadastro");
     }
   };
 

@@ -5,43 +5,41 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("UserViagem365");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
+      setIsAuthenticated(true); 
     }
   }, []);
 
   const login = async (email, password) => {
-    try {
-      const response = await fetch("http://localhost:3333/users");
-      if (!response.ok) {
-        throw new Error("Erro na conexão com o servidor");
-      }
-      const users = await response.json();
-      const user = users.find((u) => u.email === email && u.senha === password);
+    const response = await fetch('http://localhost:3333/users'); 
+    const users = await response.json();
+    const foundUser = users.find((user) => user.email === email && user.senha === password);
 
-      if (user) {
-        localStorage.setItem("UserViagem365", JSON.stringify(user));
-        setUser(user);
-        return true;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      console.error("Erro durante o login:", error);
-      return false;
+    if (foundUser) {
+      const userData = { email, password }; 
+      localStorage.setItem("UserViagem365", JSON.stringify(userData));
+      setUser(userData);
+      setIsAuthenticated(true); 
+      alert("Login de sucesso!")
+      return true; 
     }
+    alert("Login inválido! Por favor, cadastre-se!")
+    return false; 
   };
 
   const logout = () => {
     localStorage.removeItem("UserViagem365");
     setUser(null);
+    setIsAuthenticated(false); 
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isAuthenticated: !!user }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

@@ -8,14 +8,15 @@ import { AuthProvider, useAuth } from "../context/AuthContext.jsx";
 
 
 function AppRoutes() {
-  const { isAuthenticated } = useAuth() || {}; 
+  const auth = useAuth(); 
+  const isAuthenticated = auth ? auth.user !== null : false;  
 
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={isAuthenticated ? <Navigate to="/home" /> : <Navigate to="/cadastro" />} />
-          <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate to="/home" />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/home" element={isAuthenticated ? <RegisteUser /> : <Navigate to="/dashboard" />} />
           <Route path="/cadastro" element={<RegisteUser />} />
         </Routes>
       </BrowserRouter>
