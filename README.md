@@ -119,7 +119,7 @@ DEVELOP:
 
 *feature/auth-context - Feito um contexto de autenticação para somente quem estiver com email e senha no database (db'json) poderá acessa a dashboard com suas rotas. Usei LocaStorage e fetch para as rotas de verificação.
 
-
+*feature/ApiCep - Criei uma pasta component com o documento ApiCep.jsx para preenchimento automático quando digito o CEP
 
 ## 📂 PARA ACESSAR A DOCUMENTAÇÃO ACESSE O LINK:
 
