@@ -104,9 +104,8 @@ npm install prop-types
 Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
 
 DEVELOP: 
-- Criei documento db.json como cadastros falsos
 - criei pastas:
-  - components: logout
+  - context: para autenticação do  usuário conforme pasta db.json
   - pages com pastas especificas com .jsx e css: dashboard, Home, Login e register(cadastro)
   - route: como a rotas e seus links
  
