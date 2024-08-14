@@ -121,6 +121,9 @@ DEVELOP:
 
 *feature/ApiCep - Criei uma pasta component com o documento ApiCep.jsx para preenchimento automático quando digito o CEP
 
+*feature/sidebar - criar uma sidebar que acompanha na dashboard, registerLocal, editar local
+
+
 ## 📂 PARA ACESSAR A DOCUMENTAÇÃO ACESSE O LINK:
 
 Caso tenha alguma dúvida!!
