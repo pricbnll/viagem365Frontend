@@ -118,7 +118,7 @@ DEVELOP:
 
 *feature/json-server - criei a pasta ds.json e  uma lista com no mínimo 5 usuários, usei o [4Devs](https://www.4devs.com.br/gerador_de_pessoas) - Ferramentas Online Grátis para gerar os usuários.
 
-*feature/auth-context - criei uma pasta 'context' com um 'auth.jsx', 
+*feature/auth-context - Feito um contexto de autenticação para somente quem estiver com email e senha no database (db'json) poderá acessa a dashboard com suas rotas. Usei LocaStorage e fetch para as rotas de verificação.
 
 
 
