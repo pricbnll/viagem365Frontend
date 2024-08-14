@@ -164,7 +164,7 @@ Caso tenha alguma dúvida!!
 ## 👀 Melhorias
 
 - Implementar responsividade para adaptação em telas grandes (como monitores) e telas pequenas (como smartphones e tablets).
-- Na tela de cadastro, ao colocar o CEP já informa o endereço.
+- Na tela de cadastro, ao colocar o CEP cuidar para não colocar traço pois não funcionará. 
 - Utilizar a biblioteca Leaflet para criar um mapa e localizar os pontos de interesses.
 
 
