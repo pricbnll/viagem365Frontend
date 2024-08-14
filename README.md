@@ -80,8 +80,12 @@ npm i json-server --save-dev
 ```
 
 Criei um arquivo db.json e para rodar:
+No package-json fiz um script para rodar com `npm run server` na porta 3333
+``` "server": "npx json-server db.json -p 3333"``` 
 ```
-npx json-server db.json
+Endpoints:
+http://localhost:3333/users
+http://localhost:3333/localidade
 ```
 
 ✅ Algumas páginas usei validações com YUP
@@ -126,7 +130,7 @@ DEVELOP:
 
 *feature/json-server - criei a pasta ds.json e  uma lista com no mínimo 5 usuários, usei o [4Devs](https://www.4devs.com.br/gerador_de_pessoas) - Ferramentas Online Grátis para gerar os usuários.
 
-*feature/auth-context - Feito um contexto de autenticação para somente quem estiver com email e senha no database (db'json) poderá acessa a dashboard com suas rotas. Usei LocaStorage e fetch para as rotas de verificação.
+*feature/auth-context - Feito um contexto de autenticação para somente quem estiver com email e senha no database (db'json) poderá acessa a dashboard com suas rotas. Usei LocaStorage e fetch para as rotas de verificação
 
 *feature/CEP - validar CEP e buscar na API [AwesomeAPI](https://docs.awesomeapi.com.br/api-cep) os dados do endereço e preencher automaticamente.
 
