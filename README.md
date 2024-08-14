@@ -96,6 +96,15 @@ Instalei a biblioteca 'prop-types' para incluir validações
 ````
 npm install prop-types
 ````
+Adicionei `import PropTypes from 'prop-types';`
+
+
+Instalei AXIOS
+```
+npm install axios
+```
+Adicionei `import axios from 'axios'`
+
 
 
 
@@ -119,6 +128,7 @@ DEVELOP:
 
 *feature/auth-context - Feito um contexto de autenticação para somente quem estiver com email e senha no database (db'json) poderá acessa a dashboard com suas rotas. Usei LocaStorage e fetch para as rotas de verificação.
 
+*feature/CEP - validar CEP e buscar na API [AwesomeAPI](https://docs.awesomeapi.com.br/api-cep) os dados do endereço e preencher automaticamente.
 
 
 ## 📂 PARA ACESSAR A DOCUMENTAÇÃO ACESSE O LINK:

@@ -2,9 +2,10 @@ import tourist from "../../assets/tourist-pointing-lateral.jpg";
 import styles from "./register.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useEffect} from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm} from "react-hook-form";
+import AddressService from "../../components/ApiCEP";
 
 const schema = yup
   .object({
@@ -40,13 +41,13 @@ const schema = yup
 
 function RegisterUser() {
   const navigate = useNavigate();
-  // const [cepError, setCepError] = useState("");
-  // const [addressLoading, setAddressLoading] = useState(false);
+  const [cep, setCep] = useState("");
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -58,63 +59,8 @@ function RegisterUser() {
   function onSubmit(userData) {
     console.log(userData);
   }
-  // async function onSubmit(userData) {
-  //   try {
-  //     const responseEmail = await fetch(
-  //       `http://localhost:3001/users?email=${userData.email}`
-  //     );
-  //     const emailData = await responseEmail.json();
-  //     if (emailData.length > 0) {
-  //       setSubmitError("O email já está cadastrado.");
-  //       return;
-  //     }
 
-  //     const responseCpf = await fetch(
-  //       `http://localhost:3001/users?cpf=${userData.cpf}`
-  //     );
-  //     const cpfData = await responseCpf.json();
-  //     if (cpfData.length > 0) {
-  //       setSubmitError("O CPF já está cadastrado.");
-  //       return;
-  //     }
-
-  //     await fetch("http://localhost:3001/users", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(userData),
-  //     });
-
-  //     navigate("/home");
-  //   } catch (error) {
-  //     console.error("Erro ao cadastrar usuário:", error);
-  //   }
-  // }
-
-  // async function handleCepChange(e) {
-  //   const cep = e.target.value;
-  //   if (cep.length === 8) {
-  //     setAddressLoading(true);
-  //     try {
-  //       const response = await fetch(
-  //         `https://cep.awesomeapi.com.br/json/${cep}`
-  //       );
-  //       const data = await response.json();
-  //       if (data.address) {
-  //         setValue("endereco", data.address);
-  //         setValue("cidade", data.city || '');
-  //         setValue("estado", data.state || '');
-  //         setCepError("");
-  //       } else {
-  //         setCepError("CEP não encontrado.");
-  //       }
-  //     } catch (error) {
-  //       setCepError("Erro ao buscar o CEP.");
-  //     }
-  //     setAddressLoading(false);
-  //   }
-  // }
+  
 
   function handleLogin() {
     navigate("/");
@@ -175,12 +121,11 @@ function RegisterUser() {
                 type="text"
                 className={styles.formControl}
                 placeholder="Digite seu CEP"
-                {...register("cep")}
+                {...register("cep", { onChange: (e) => setCep(e.target.value) })} 
                 autoComplete="postal-code"
-                // onChange={handleCepChange}
               />
               <span className={styles.errorMessage}>{errors.cep?.message}</span> 
-              {/* <span className={styles.errorMessage}>{errors.cep?.message || cepError}</span> */}
+              <AddressService cep={cep} setValue={setValue} setCepError={setCep} />
             </div>
             <div>
               <label className={styles.formLabel}>Endereço</label>
@@ -189,7 +134,6 @@ function RegisterUser() {
                 className={styles.formControl}
                 {...register("endereco")}
                 autoComplete="street-address"
-                // disabled={addressLoading}
               />
               <span className={styles.errorMessage}>{errors.endereco?.message}</span>
             </div>
