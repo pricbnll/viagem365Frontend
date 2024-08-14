@@ -36,7 +36,7 @@ function Login() {
     if (success) {
       navigate("/home");
     } else {
-      alert("Email ou senha incorretos.");
+      alert("Email ou senha não cadastrados.");
     }
   };
 

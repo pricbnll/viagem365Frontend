@@ -13,14 +13,14 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = async (email, senha) => {
+  const login = async (email, password) => {
     try {
-      const response = await fetch("http://localhost:3000/users");
+      const response = await fetch("http://localhost:3333/users");
       if (!response.ok) {
         throw new Error("Erro na conexão com o servidor");
       }
       const users = await response.json();
-      const user = users.find((u) => u.email === email && u.senha === senha);
+      const user = users.find((u) => u.email === email && u.senha === password);
 
       if (user) {
         localStorage.setItem("UserViagem365", JSON.stringify(user));
