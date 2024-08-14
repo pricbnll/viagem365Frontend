@@ -25,8 +25,9 @@ function Sidebar() {
         <button onClick={handleLogout} className={styles.btnLogout}>
           Sair
         </button>
+          </div>
         </div>
-      </div>
+      
     </>
   );
 }
