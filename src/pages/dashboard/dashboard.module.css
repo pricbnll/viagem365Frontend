@@ -1,0 +1,12 @@
+.container {
+  background-color: var(--bege);
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.formDiv {
+  width: 100vw;
+  position: fixed; 
+}
