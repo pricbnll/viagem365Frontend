@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const response = await fetch('http://localhost:3000/users'); 
+    const response = await fetch('http://localhost:3333/users'); 
     const users = await response.json();
     const foundUser = users.find((user) => user.email === email && user.senha === password);
 
