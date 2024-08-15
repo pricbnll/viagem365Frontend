@@ -56,6 +56,11 @@ VITE v5.3.2 ready in 168 ms
 to expose ➜ press h + enter to show help
 ```
 
+Rodar json server:
+```
+npx json-server db.json
+```
+                      
 ##  ✅  Dependências instaladas: 
 
 Instalado Bootstrap com a importação no arquivo main.jsx
