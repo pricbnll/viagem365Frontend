@@ -56,6 +56,8 @@ VITE v5.3.2 ready in 168 ms
 to expose ➜ press h + enter to show help
 ```
 
+##  ✅  Dependências instaladas: 
+
 Instalado Bootstrap com a importação no arquivo main.jsx
 ```
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -88,7 +90,7 @@ http://localhost:3333/users
 http://localhost:3333/localidade
 ```
 
-✅ Algumas páginas usei validações com YUP
+Algumas páginas usei validações com YUP
 
 Instalar Yup `npm install @hookform/resolvers yup`
 ```
