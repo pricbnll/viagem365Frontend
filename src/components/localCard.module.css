@@ -1,0 +1,27 @@
+.cardContainer {
+  border: 4px solid var(--dark-orange);
+  padding: 10px;
+    font-size: 2rem;
+    color: var(--brown);
+    background-color: var(--light-orange);
+}
+
+.cardLocal {
+  display: flex;
+  justify-content: space-around;
+}
+
+img {
+  width: 80px;
+}
+
+.totalText {
+  font-size: 1.8rem;
+  padding: 20px;
+}
+
+p {
+    color: var(--dark-orange);
+}
+
+
