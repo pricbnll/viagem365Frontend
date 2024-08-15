@@ -60,8 +60,6 @@ const schema = yup
       console.log(userData);
     }
   
-    
-  
     function handleLogin() {
       navigate("/");
     }

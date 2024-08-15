@@ -11,7 +11,7 @@
     "server": "npx json-server db.json -p 3333"
   },
   "dependencies": {
-    "@eslint/config-array": "^0.17.1",
+    "@eslint/config-array": "^0.18.0",
     "@eslint/object-schema": "^2.1.4",
     "@hookform/resolvers": "^3.9.0",
     "axios": "^1.7.4",
