@@ -1,12 +1,24 @@
+h1 {
+  color: var(--bege);
+
+}
+
 .container {
-  background-color: var(--bege);
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
+.localContainer {
+  margin-left: 18vw;
+  margin-right: 10px;
+}
+
 .formDiv {
-  width: 100vw;
+  width: 80vw;
   position: fixed; 
 }
+
+
+

@@ -1,6 +1,7 @@
 {
   "users": [
     {
+      "id": 1,
       "nome": "Jorge Mário Viana",
       "cpf": "43514612170",
       "data_nasc": "12/04/1952",
@@ -15,6 +16,7 @@
       "estado": "CE"
     },
     {
+      "id": 2,
       "nome": "Manuel Ian Eduardo Aparício",
       "cpf": "10905841646",
       "data_nasc": "23/05/1985",
@@ -29,6 +31,7 @@
       "estado": "RJ"
     },
     {
+      "id": 3,
       "nome": "Gustavo Fábio João Nascimento",
       "cpf": "34050513129",
       "data_nasc": "10/04/1976",
@@ -43,6 +46,7 @@
       "estado": "AM"
     },
     {
+      "id": 4,
       "nome": "Heloisa Raquel Baptista",
       "cpf": "75990544995",
       "data_nasc": "15/02/1984",
@@ -57,6 +61,7 @@
       "estado": "AP"
     },
     {
+      "id": 5,
       "nome": "Nelson Marcos Souza",
       "cpf": "36459737614",
       "data_nasc": "02/06/1982",
@@ -74,6 +79,7 @@
   "localidade": [
     {
       "id": 1,
+      "userId": 1,
       "destino": "Mercado Público de Florianópolis",
       "descricao": "O local é um verdadeiro centro de cultura, gastronomia e comércio. Os boxes e lojas oferecem desde   produtos artesanais, alimentos frescos, até souvenires típicos da região.",
       "localidade": "Centro de Florianópolis/SC - Brasil",
@@ -81,9 +87,9 @@
       "latitude": "-27.59587",
       "longitude": "48.54972"
     },
-
     {
       "id": 2,
+      "userId": 1,
       "destino": "Dunas da Joaquina na Lagoa da Conceição",
       "descricao": "As Dunas da Joaquina são uma impressionante formação natural localizada entre a Lagoa da Conceição e o mar. São famosas para a prática do “sandboard”, esporte em que as pessoas descem as dunas em pranchas.",
       "localidade": "Lagoa da Conceição de Florianópolis/SC - Brasil",
@@ -93,6 +99,37 @@
     },
     {
       "id": 3,
+      "userId": 2,
+      "destino": "Ponte Hercílio Luz",
+      "descricao": "Símbolo da engenharia brasileira. Inaugurada em 1926, foi a primeira ligação rodoviária entre a ilha e o continente. A ponte é iluminada, o que a torna uma paisagem incrível de ser observada à noite, durante passeios e momentos de descanso.",
+      "localidade": "Centro de Florianópolis/SC - Brasil",
+      "cep": 88015601,
+      "latitude": "-27.593889",
+      "longitude": "-48.566111"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "destino": "Mercado Público de Florianópolis",
+      "descricao": "O local é um verdadeiro centro de cultura, gastronomia e comércio. Os boxes e lojas oferecem desde   produtos artesanais, alimentos frescos, até souvenires típicos da região.",
+      "localidade": "Centro de Florianópolis/SC - Brasil",
+      "cep": 88010030,
+      "latitude": "-27.59587",
+      "longitude": "48.54972"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "destino": "Dunas da Joaquina na Lagoa da Conceição",
+      "descricao": "As Dunas da Joaquina são uma impressionante formação natural localizada entre a Lagoa da Conceição e o mar. São famosas para a prática do “sandboard”, esporte em que as pessoas descem as dunas em pranchas.",
+      "localidade": "Lagoa da Conceição de Florianópolis/SC - Brasil",
+      "cep": 88048424,
+      "latitude": "27.4705",
+      "longitude": "48.3886"
+    },
+    {
+      "id": 6,
+      "userId": 5,
       "destino": "Ponte Hercílio Luz",
       "descricao": "Símbolo da engenharia brasileira. Inaugurada em 1926, foi a primeira ligação rodoviária entre a ilha e o continente. A ponte é iluminada, o que a torna uma paisagem incrível de ser observada à noite, durante passeios e momentos de descanso.",
       "localidade": "Centro de Florianópolis/SC - Brasil",
