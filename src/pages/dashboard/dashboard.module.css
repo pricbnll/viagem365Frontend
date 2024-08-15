@@ -1,6 +1,19 @@
 h1 {
-  color: var(--bege);
+  color: var(--terracota);
+  padding: 20px;
+}
 
+h2 {
+  padding-top: 20px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+span {
+  margin-bottom: 20px;
 }
 
 .container {
@@ -17,12 +30,23 @@ h1 {
 
 .formDiv {
   width: 80vw;
-  position: fixed; 
+  position: fixed;
 }
 
 table {
   font-size: 0.9rem;
+  border: 2px solid var(--dark-orange);
+  
 }
 
+table tr:nth-child(odd) {
+  background-color: var(--bege);
+}
 
+table tr:nth-child(even) {
+  background-color: var(--light-blue);
+}
 
+table td, table th {
+  padding: 5px; 
+}

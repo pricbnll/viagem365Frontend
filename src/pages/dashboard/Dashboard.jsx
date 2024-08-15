@@ -4,11 +4,13 @@ import styles from "./dashboard.module.css";
 import Table from "react-bootstrap/Table";
 import Sidebar from "../../components/Sidebar";
 import { AuthContext } from "../../context/AuthContext";
+import LocalCard from "../../components/LocalCard";
+// import Map from "../../components/Map";
 
 function Dashboard() {
   const { isAuthenticated, user } = useContext(AuthContext);
   const [localidades, setLocalidades] = useState([]);
-  const [viajante, setViajante] = useState('Nome do Viajante');
+  const [viajante, setViajante] = useState("Nome do Viajante");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -28,14 +30,16 @@ function Dashboard() {
     }
 
     if (user && user.nome) {
-      setViajante(user.nome); // Define o nome do viajante com base no usuário autenticado
+      setViajante(user.nome); 
     }
 
     const fetchLocalidades = async () => {
       try {
-        const response = await fetch(`http://localhost:3333/localidade?userId=${user.id}`);
+        const response = await fetch(
+          `http://localhost:3333/localidade?userId=${user.id}`
+        );
         if (!response.ok) {
-          throw new Error('Não há conexão com a database');
+          throw new Error("Não há conexão com a database");
         }
         const data = await response.json();
         console.log("Dados recebidos:", data); // Log dos dados recebidos
@@ -55,20 +59,24 @@ function Dashboard() {
     return null;
   }
 
+  const totalLocais = localidades.length
+  // console.log(totalLocais)
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.localContainer}>
           <h1>Dashboard</h1>
+          <LocalCard totalLocais={totalLocais} />
           <h2>Destinos cadastrados</h2>
-          <span>Estes são seus destinos cadastrados da suas aventuras</span>
-          <h3>Viajante: {viajante}</h3> {/* Exibe o nome do viajante */}
+          <span>Estes são seus destinos cadastrados da suas aventuras!!!</span>
+          <h3>Viajante: {viajante}</h3> 
           {loading ? (
             <p>Carregando...</p>
           ) : error ? (
             <p>{error}</p>
           ) : (
-            <Table striped bordered hover>
+            <Table striped bordered hover variant="dark">
               <thead>
                 <tr>
                   <th>#</th>
@@ -83,7 +91,7 @@ function Dashboard() {
               <tbody>
                 {localidades.map((localidade, index) => (
                   <tr key={index}>
-                    <td>{index + 1}</td>
+                    <td>{localidade.id}</td>
                     <td>{localidade.destino}</td>
                     <td>{localidade.descricao}</td>
                     <td>{localidade.localidade}</td>
@@ -93,9 +101,15 @@ function Dashboard() {
                   </tr>
                 ))}
               </tbody>
+              {/* <Link to={`/atualizarDestinos/${localidade.id}`}>Editar</Link> */}
             </Table>
           )}
         </div>
+        {/* <div className={styles.mapContainer}>
+          <h3>Mapa</h3>
+          <p>Seus destinos no mapa</p>
+          <Map />
+        </div> */}
         <div className={styles.formDiv}>
           <Sidebar />
         </div>

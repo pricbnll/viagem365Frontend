@@ -63,13 +63,10 @@ npx json-server db.json
                       
 ##  ✅  Dependências instaladas: 
 
-Instalado Bootstrap com a importação no arquivo main.jsx
-```
-import 'bootstrap/dist/css/bootstrap.min.css'
-```
-```
-npm install bootstrap@5.3.3
-```
+Instalado React Bootstrap 
+`````
+npm install react-bootstrap bootstrap
+``````
 
 Instalei Reach Router Dom
 ```
