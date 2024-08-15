@@ -132,7 +132,10 @@ DEVELOP:
 
 *feature/auth-context - Feito um contexto de autenticação para somente quem estiver com email e senha no database (db'json) poderá acessa a dashboard com suas rotas. Usei LocaStorage e fetch para as rotas de verificação
 
-*feature/CEP - validar CEP e buscar na API [AwesomeAPI](https://docs.awesomeapi.com.br/api-cep) os dados do endereço e preencher automaticamente.
+*feature/ApiCep - Criei uma pasta component com o documento ApiCep.jsx para preenchimento automático quando digito o CEP
+
+*feature/sidebar - criar uma sidebar que acompanha na dashboard, registerLocal, editar local
+
 
 
 ## 📂 PARA ACESSAR A DOCUMENTAÇÃO ACESSE O LINK:
@@ -178,7 +181,7 @@ Caso tenha alguma dúvida!!
 ## 👀 Melhorias
 
 - Implementar responsividade para adaptação em telas grandes (como monitores) e telas pequenas (como smartphones e tablets).
-- Na tela de cadastro, ao colocar o CEP já informa o endereço.
+- Na tela de cadastro, ao colocar o CEP cuidar para não colocar traço pois não funcionará. 
 - Utilizar a biblioteca Leaflet para criar um mapa e localizar os pontos de interesses.
 
 

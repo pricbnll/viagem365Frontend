@@ -6,7 +6,8 @@ function AddressService({ cep, setValue, setCepError }) {
     const [addressLoading, setAddressLoading] = useState(false);
   
     useEffect(() => {
-      if (typeof cep === 'string' && cep.length === 8) { // Verifica se o CEP tem 8 dígitos
+
+      if (typeof cep === 'string' && cep.length === 8) {
         setAddressLoading(true);
         axios.get(`https://cep.awesomeapi.com.br/json/${cep}`)
           .then(response => {
