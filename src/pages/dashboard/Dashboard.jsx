@@ -5,7 +5,7 @@ import Table from "react-bootstrap/Table";
 import Sidebar from "../../components/Sidebar";
 import { AuthContext } from "../../context/AuthContext";
 import LocalCard from "../../components/LocalCard";
-// import Map from "../../components/Map";
+import Map from "../../components/Map";
 
 function Dashboard() {
   const { isAuthenticated, user } = useContext(AuthContext);
@@ -30,7 +30,7 @@ function Dashboard() {
     }
 
     if (user && user.nome) {
-      setViajante(user.nome); 
+      setViajante(user.nome);
     }
 
     const fetchLocalidades = async () => {
@@ -59,7 +59,7 @@ function Dashboard() {
     return null;
   }
 
-  const totalLocais = localidades.length
+  const totalLocais = localidades.length;
   // console.log(totalLocais)
 
   return (
@@ -69,8 +69,8 @@ function Dashboard() {
           <h1>Dashboard</h1>
           <LocalCard totalLocais={totalLocais} />
           <h2>Destinos cadastrados</h2>
-          <span>Estes são seus destinos cadastrados da suas aventuras!!!</span>
-          <h3>Viajante: {viajante}</h3> 
+          <span>Estes são seus destinos cadastrado das suas aventuras!!!</span>
+          <h3>Viajante: {viajante}</h3>
           {loading ? (
             <p>Carregando...</p>
           ) : error ? (
@@ -105,11 +105,10 @@ function Dashboard() {
             </Table>
           )}
         </div>
-        {/* <div className={styles.mapContainer}>
-          <h3>Mapa</h3>
-          <p>Seus destinos no mapa</p>
+        <p>Seus destinos no mapa</p>
+        <div className={styles.mapContainer}>
           <Map />
-        </div> */}
+        </div>
         <div className={styles.formDiv}>
           <Sidebar />
         </div>
