@@ -94,7 +94,7 @@ function RegisterLocalidade() {
             </div>
             <div>
               <label className={styles.formLabel}>Descrição</label>
-              <input
+              <textarea
                 type="text"
                 className={styles.formControl}
                 placeholder="Descreva o destino"

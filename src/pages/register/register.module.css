@@ -53,6 +53,12 @@ h1 {
   padding: 15px;
 }
 
+textarea {
+  grid-column: span 2;
+  resize: vertical;
+  min-height: 100px;
+}
+
 span {
   display: block;
   color: var(--dark-orange);
