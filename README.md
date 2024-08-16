@@ -151,9 +151,9 @@ DEVELOP:
 
 *feature/RegisterUser-postJson - Nao cadastrar cpf existente duas vezes e cadastrar user novo no db.json
 
-*feature/Map - utilizando React Leaflet para colocar um pin nos destinos cadastrados do usuário logado.
+*feature/Map - utilizando React Leaflet para colocar um pin nos destinos cadastrados do usuário logado. 
 
-*feature/registerLocal - feito o cadastro de um novo local, com validações e estilizações
+*feature/RegisterLocalidade - Criei uma página para cadastrar um novo destino do usuário logado. Utilizei o mesmo formulário do RegisterUser. No campo CEP utilizei a API do ViaCEP para preencher automaticamente os campos de endereço. Ao cadastrar, o novo destino é adicionado à tabela na dashboard.um novo local, com validações e estilizações
 
 
 
