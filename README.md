@@ -140,6 +140,8 @@ DEVELOP:
 
 *feature/sidebar - criar uma sidebar que acompanha na dashboard, registerLocal, editar local
 
+*feature/dashboard -  feito o card com total de destinos - component>LocalCard, a tabela com cada destino do usuário logado e suas estilizações
+
 
 
 ## 📂 PARA ACESSAR A DOCUMENTAÇÃO ACESSE O LINK:
