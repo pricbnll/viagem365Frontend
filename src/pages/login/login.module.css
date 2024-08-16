@@ -1,0 +1,66 @@
+.h1Login {
+  color: var(--bege);
+  text-align: center;
+}
+
+.formContainer {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--bege);
+  width: 100%; /* Ocupa toda a largura disponível dentro da .formDiv */
+  max-width: 400px; /* Máxima largura desejada */
+  gap: 20px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formControl {
+  height: 50px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--bege);
+  font-size: 1.1rem;
+  color: var(--brown);
+  padding: 15px;
+}
+
+span {
+  display: block;
+  color: var(--dark-orange);
+  margin-top: 10px;
+}
+
+.btnLogin,
+.btnRegister {
+  height: 50px;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  color: var(--brown);
+}
+
+.btnLogin {
+  border: 1px solid var(--light-orange);
+  background-color: var(--light-orange);
+}
+
+.btnRegister {
+  border: 1px solid var(--dark-orange);
+  background-color: var(--dark-orange);
+}
+
+.greyQoRegular {
+  color: var(--light-orange);
+  text-align: center;
+  font-family: "Grey Qo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.errorMessage {
+  font-size: 0.9rem;
+}
