@@ -1,4 +1,4 @@
-h1 {
+.mapContainer {
   color: var(--terracota);
   padding: 20px;
 }
@@ -21,6 +21,7 @@ span {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: var(--light-bege);
 }
 
 .localContainer {
@@ -36,6 +37,7 @@ span {
 table {
   font-size: 0.9rem;
   border: 2px solid var(--dark-orange);
+  max-width: 90%;
 }
 
 table tr:nth-child(odd) {
@@ -61,3 +63,22 @@ table th {
   position: relative;
   border-radius: 5px;
 }
+
+.btnRegister {
+  height: 50px;
+  width: 20%;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: var(--brown);
+  border: 1px solid var(--dark-orange);
+  background-color: var(--dark-orange);
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center; 
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+  

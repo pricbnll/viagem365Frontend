@@ -2,6 +2,7 @@ h1 {
   color: var(--bege);
   text-align: center;
   grid-column: span 2;
+  margin-bottom: 50px;
 }
 
 .container {
@@ -32,7 +33,7 @@ h1 {
 .formContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 20px;
   width: 80%;
   color: var(--bege);
 }
@@ -96,4 +97,23 @@ span {
 
 .errorMessage {
   font-size: 0.9rem;
+}
+
+.btnLogin,
+.btnRegister {
+  height: 50px;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  color: var(--brown);
+}
+
+.btnLogin {
+  border: 1px solid var(--light-orange);
+  background-color: var(--light-orange);
+}
+
+.btnRegister {
+  border: 1px solid var(--dark-orange);
+  background-color: var(--dark-orange);
 }

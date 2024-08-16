@@ -6,8 +6,6 @@ import Sidebar from "../../components/Sidebar";
 import { AuthContext } from "../../context/AuthContext";
 import LocalCard from "../../components/LocalCard";
 import Map from "../../components/Map";
-// import { MapContainer, TileLayer } from "react-leaflet";
-// import 'leaflet/dist/leaflet.css';
 
 function Dashboard() {
   const { isAuthenticated, user } = useContext(AuthContext);
@@ -64,15 +62,29 @@ function Dashboard() {
   const totalLocais = localidades.length;
   // console.log(totalLocais)
 
+  const handleRegister = () => {
+    navigate("/cadastroLocalidade");
+  };
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.localContainer}>
-          <h1>Dashboard</h1>
+          <h1 className={styles.h1Dashboard}>Dashboard</h1>
           <LocalCard totalLocais={totalLocais} />
           <h2>Destinos cadastrados</h2>
           <span>Estes são seus destinos cadastrado das suas aventuras!!!</span>
-          <h3>Viajante: {viajante}</h3>
+          <div className={styles.btnContainer}>
+            <h3>Viajante: {viajante}</h3>
+            <button
+            type="button"
+            className={styles.btnRegister}
+            onClick={handleRegister}
+            >
+            Cadastrar
+            </button>
+          </div>
+
           {loading ? (
             <p>Carregando...</p>
           ) : error ? (
