@@ -4,6 +4,7 @@ import RegisteUser from "../pages/register/RegisterUser";
 import { AuthProvider, useAuth } from "../context/AuthContext.jsx";
 import Sidebar from "../components/Sidebar.jsx";
 import Dashboard from "../pages/dashboard/Dashboard.jsx";
+import Map from "../components/Map.jsx";
 
 
 function AppRoutes() {
@@ -19,6 +20,7 @@ function AppRoutes() {
           <Route path="/cadastro" element={<RegisteUser />} />
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/dashboard" element={<Dashboard />} />    
+          <Route path="/map" element={<Map />} />    
         </Routes>
       </BrowserRouter>
     </AuthProvider>

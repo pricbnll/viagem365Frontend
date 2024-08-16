@@ -6,6 +6,8 @@ import Sidebar from "../../components/Sidebar";
 import { AuthContext } from "../../context/AuthContext";
 import LocalCard from "../../components/LocalCard";
 import Map from "../../components/Map";
+// import { MapContainer, TileLayer } from "react-leaflet";
+// import 'leaflet/dist/leaflet.css';
 
 function Dashboard() {
   const { isAuthenticated, user } = useContext(AuthContext);
@@ -42,7 +44,7 @@ function Dashboard() {
           throw new Error("Não há conexão com a database");
         }
         const data = await response.json();
-        console.log("Dados recebidos:", data); // Log dos dados recebidos
+        console.log("Dados recebidos:", data); 
         setLocalidades(data || []);
       } catch (error) {
         console.error("Erro ao buscar os dados", error);
@@ -104,11 +106,11 @@ function Dashboard() {
               {/* <Link to={`/atualizarDestinos/${localidade.id}`}>Editar</Link> */}
             </Table>
           )}
+          <span>Seus destinos no mapa</span>
         </div>
-        <p>Seus destinos no mapa</p>
-        <div className={styles.mapContainer}>
-          <Map />
-        </div>
+
+        <Map localidades={localidades} />
+
         <div className={styles.formDiv}>
           <Sidebar />
         </div>

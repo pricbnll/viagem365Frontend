@@ -113,6 +113,13 @@ npm install axios
 ```
 Adicionei `import axios from 'axios'`
 
+Instalei React Leaflet
+```
+npm install react react-dom leaflet
+npm install react-leaflet
+```
+Adicionei `import { MapContainer, TileLayer } from 'react-leaflet'`
+
 
 
 
@@ -141,6 +148,12 @@ DEVELOP:
 *feature/sidebar - criar uma sidebar que acompanha na dashboard, registerLocal, editar local
 
 *feature/dashboard -  feito o card com total de destinos - component>LocalCard, a tabela com cada destino do usuário logado e suas estilizações
+
+*feature/RegisterUser-postJson - Nao cadastrar cpf existente duas vezes e cadastrar user novo no db.json
+
+*feature/Map - utilizando React Leaflet para colocar um pin nos destinos cadastrados do usuário logado.
+
+*feature/registerLocal - feito o cadastro de um novo local, com validações e estilizações
 
 
 
