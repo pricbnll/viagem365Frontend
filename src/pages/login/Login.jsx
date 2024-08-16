@@ -1,4 +1,4 @@
-import styles from "./login.module.css";
+import styles from "./login.module.css"
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";

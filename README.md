@@ -63,13 +63,10 @@ npx json-server db.json
                       
 ##  ✅  Dependências instaladas: 
 
-Instalado Bootstrap com a importação no arquivo main.jsx
-```
-import 'bootstrap/dist/css/bootstrap.min.css'
-```
-```
-npm install bootstrap@5.3.3
-```
+Instalado React Bootstrap 
+`````
+npm install react-bootstrap bootstrap
+``````
 
 Instalei Reach Router Dom
 ```
@@ -142,6 +139,8 @@ DEVELOP:
 *feature/ApiCep - Criei uma pasta component com o documento ApiCep.jsx para preenchimento automático quando digito o CEP
 
 *feature/sidebar - criar uma sidebar que acompanha na dashboard, registerLocal, editar local
+
+*feature/dashboard -  feito o card com total de destinos - component>LocalCard, a tabela com cada destino do usuário logado e suas estilizações
 
 
 
