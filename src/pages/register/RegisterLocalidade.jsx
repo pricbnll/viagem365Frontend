@@ -2,15 +2,17 @@ import tourist from "../../assets/tourist-with-his-fingers-crossing.jpg";
 import styles from "./register.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import AddressService from "../../components/ApiCEP";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup
   .object({
     destino: yup.string().required("O nome do destino é obrigatório."),
-    descricao: yup.string().required("A descrição é obrigatório."),
-    localidade: yup.string().required("Informe a cidade e estado  destino."),
+    descricao: yup.string().required("A descrição é obrigatória."),
+    localidade: yup.string().required("Informe a cidade e estado do destino."),
     cep: yup
       .string()
       .matches(/^\d{5}-?\d{3}$/, "CEP inválido.")
@@ -20,8 +22,11 @@ const schema = yup
   })
   .required();
 
-function Dashboard() {
+function RegisterLocalidade() {
+  const { user } = useContext(AuthContext); 
   const [cep, setCep] = useState("");
+  const [cepError, setCepError] = useState(null);
+  const navigate = useNavigate()
 
   const {
     register,
@@ -36,8 +41,33 @@ function Dashboard() {
     console.log("Componente renderizado");
   }, []);
 
-  function onSubmit(userData) {
-    console.log(userData);
+  async function onSubmit(userData) {
+    if (cepError) {
+      alert("Corrija o CEP antes de enviar.");
+      return;
+    }
+
+    const userId = user?.id; // Obtém o ID do usuário autenticado
+    const dataToSubmit = { ...userData, userId };
+
+    try {
+      const response = await fetch("http://localhost:3333/localidade", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToSubmit),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao cadastrar o local");
+      }
+
+      alert("Local cadastrado com sucesso");
+      navigate ("/dashboard")
+    } catch (error) {
+      console.error("Erro:", error);
+    }
   }
 
   return (
@@ -55,15 +85,15 @@ function Dashboard() {
                 type="text"
                 className={styles.formControl}
                 placeholder="Digite o nome do destino"
-                {...register("nome")}
+                {...register("destino")}
                 autoComplete="name"
               />
               <span className={styles.errorMessage}>
-                {errors.nome?.message}
+                {errors.destino?.message}
               </span>
             </div>
             <div>
-              <label className={styles.formLabel}>Descricao</label>
+              <label className={styles.formLabel}>Descrição</label>
               <input
                 type="text"
                 className={styles.formControl}
@@ -80,11 +110,10 @@ function Dashboard() {
                 type="text"
                 className={styles.formControl}
                 placeholder="Digite a cidade e estado do destino"
-                {...register("nome")}
-                autoComplete="name"
+                {...register("localidade")}
               />
               <span className={styles.errorMessage}>
-                {errors.nome?.message}
+                {errors.localidade?.message}
               </span>
             </div>
             <div>
@@ -102,7 +131,7 @@ function Dashboard() {
               <AddressService
                 cep={cep}
                 setValue={setValue}
-                setCepError={setCep}
+                setCepError={setCepError}
               />
             </div>
             <div>
@@ -144,4 +173,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default RegisterLocalidade;
