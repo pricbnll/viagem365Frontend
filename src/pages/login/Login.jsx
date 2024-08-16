@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../context/AuthContext.jsx";
 
+console.log(styles);
+
+
 const schema = yup
   .object({
     email: yup
@@ -52,7 +55,7 @@ function Login() {
           className={styles.formContainer}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h1>Efetue seu Login</h1>
+          <h1 className={styles.h1Login}>Efetue seu Login</h1>
           <p className={styles.greyQoRegular}>
             Experimente ter seus destinos salvos em uma plataforma divertida e
             interativa! Guarde seus destinos aqui!!
