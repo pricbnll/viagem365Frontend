@@ -1,6 +1,8 @@
-.mapContainer {
-  color: var(--terracota);
-  padding: 20px;
+.h1Dashboard{
+  color: var(--dark-yellow);
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 h2 {

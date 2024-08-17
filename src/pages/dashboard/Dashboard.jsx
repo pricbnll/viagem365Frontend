@@ -81,7 +81,7 @@ function Dashboard() {
             className={styles.btnRegister}
             onClick={handleRegister}
             >
-            Cadastrar
+            Cadastrar mais aventuras
             </button>
           </div>
 
