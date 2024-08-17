@@ -5,7 +5,7 @@ import { AuthProvider, useAuth } from "../context/AuthContext.jsx";
 import Sidebar from "../components/Sidebar.jsx";
 import Dashboard from "../pages/dashboard/Dashboard.jsx";
 import RegisterLocalidade from "../pages/register/RegisterLocalidade.jsx";
-
+import UpdateLocalidade from "../pages/register/UpdateLocalidade.jsx";
 
 function AppRoutes() {
   const auth = useAuth(); 
@@ -21,6 +21,7 @@ function AppRoutes() {
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/dashboard" element={<Dashboard />} />    
           <Route path="/cadastroLocalidade" element={<RegisterLocalidade />} />    
+          <Route path="/atualizarDestino" element={<UpdateLocalidade />} />    
         </Routes>
       </BrowserRouter>
     </AuthProvider>
