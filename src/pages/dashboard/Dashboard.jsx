@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./dashboard.module.css";
-import Table from "react-bootstrap/Table";
-import Sidebar from "../../components/Sidebar";
 import { AuthContext } from "../../context/AuthContext";
 import LocalCard from "../../components/LocalCard";
 import Map from "../../components/Map";
+import Sidebar from "../../components/Sidebar";
+import styles from "./dashboard.module.css"; 
+import Table from "react-bootstrap/Table"; 
 
 function Dashboard() {
   const { isAuthenticated, user } = useContext(AuthContext);
@@ -63,6 +63,7 @@ function Dashboard() {
   // console.log(totalLocais)
 
   const handleRegister = () => {
+    console.log("Botão clicado");
     navigate("/cadastroLocalidade");
   };
 
@@ -77,11 +78,11 @@ function Dashboard() {
           <div className={styles.btnContainer}>
             <h3>Viajante: {viajante}</h3>
             <button
-            type="button"
-            className={styles.btnRegister}
-            onClick={handleRegister}
+              type="button"
+              className={styles.btnRegister}
+              onClick={handleRegister}
             >
-            Cadastrar mais aventuras
+              Cadastrar mais aventuras
             </button>
           </div>
 
