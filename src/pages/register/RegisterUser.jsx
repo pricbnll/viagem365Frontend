@@ -41,6 +41,10 @@ function RegisterUser() {
   }, []);
 
   async function onSubmit(userData) {
+    if (cepError) {
+      alert("Corrija o CEP antes de enviar.");
+      return;
+    }
     try {
       const cpfExistente = await fetch(`http://localhost:3333/users?cpf=${userData.cpf}`);
       const cpfData = await cpfExistente.json();
