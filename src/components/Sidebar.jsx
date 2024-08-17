@@ -20,7 +20,7 @@ function Sidebar() {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/dashboard">Seus destinos </NavLink>
             <NavLink to="/atualizarDados">Atualizar dados</NavLink>
-            <NavLink to="/atualizarDestinos">Atualizar destinos</NavLink>
+            <NavLink to="/atualizarDestino">Atualizar destino</NavLink>
           </nav>
           <button onClick={handleLogout} className={styles.btnLogout}>
             Sair

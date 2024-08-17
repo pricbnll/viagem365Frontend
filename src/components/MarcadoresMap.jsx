@@ -32,8 +32,8 @@ function MarcadoresMap({ localidades }) {
             key={localidade.id}
           >
             <Popup>
-              <p>{localidade.descricao}</p>
               <strong>{localidade.destino}</strong>
+              <p>{localidade.descricao}</p>
             </Popup>
           </Marker>
         )
