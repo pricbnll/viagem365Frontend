@@ -133,7 +133,6 @@ function RegisterUser() {
               autoComplete="postal-code"
             />
             <span className={styles.errorMessage}>{errors.cep?.message}</span>
-            <span className={styles.errorMessage}>{cepError}</span>
             <AddressService cep={cep} setValue={setValue} setCepError={setCepError} />
           </div>
           <div>
