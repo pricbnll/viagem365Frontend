@@ -63,7 +63,7 @@ function RegisterLocalidade() {
         throw new Error("Erro ao cadastrar o local");
       }
 
-      alert("Local cadastrado com sucesso");
+      // alert("Local cadastrado com sucesso");
       navigate ("/dashboard")
     } catch (error) {
       console.error("Erro:", error);
