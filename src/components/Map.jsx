@@ -5,11 +5,7 @@ import MarcadoresMap from "./MarcadoresMap";
 import styles from "./map.module.css";
 
 function Map({ localidades }) {
-  if (!localidades || localidades.length === 0) {
-    return <div className={styles.mapContainer}>Dados de localização ausentes</div>;
-  }
-
-  const position = [-27.614160537150866, -48.504904703694876];
+ const position = [-27.614160537150866, -48.504904703694876];
 
   return (
     <div className={styles.mapContainer}>
@@ -34,7 +30,7 @@ Map.propTypes = {
       descricao: PropTypes.string.isRequired,
       destino: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  )
 };
 
 export default Map;
