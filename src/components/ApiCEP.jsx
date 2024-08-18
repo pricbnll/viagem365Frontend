@@ -6,10 +6,8 @@ function AddressService({ cep, setValue, setCepError }) {
   const [addressLoading, setAddressLoading] = useState(false);
 
   useEffect(() => {
-    // Remove any non-digit characters from the CEP
     const formattedCep = cep.replace(/\D/g, '');
 
-    // Check if the CEP length is 8 after formatting
     if (formattedCep.length === 8) {
       setAddressLoading(true);
       axios.get(`https://cep.awesomeapi.com.br/json/${formattedCep}`)
