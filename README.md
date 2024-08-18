@@ -153,7 +153,8 @@ DEVELOP:
 
 *feature/Map - utilizando React Leaflet para colocar um pin nos destinos cadastrados do usuário logado. 
 
-*feature/RegisterLocalidade - Criei uma página para cadastrar um novo destino do usuário logado. Utilizei o mesmo formulário do RegisterUser. No campo CEP utilizei a API do ViaCEP para preencher automaticamente os campos de endereço. Ao cadastrar, o novo destino é adicionado à tabela na dashboard.um novo local, com validações e estilizações
+*feature/RegisterLocalidade - Criei uma página para cadastrar um novo destino do usuário logado. Utilizei o mesmo formulário do RegisterUser. No campo CEP utilizei a API do ViaCEP para preencher automaticamente os campos de endereço. Ao cadastrar, o novo destino é adicionado à tabela na dashboard, com validações e estilizações
+No Dashboard, adicionei um link para a página de atualização de destino passando o ID da localidade na URL. Na página de atualização já carreguei os dados da localidade ao montar o componente, usando o ID da URL.
 
 
 
