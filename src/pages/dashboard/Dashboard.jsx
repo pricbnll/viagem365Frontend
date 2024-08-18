@@ -55,6 +55,10 @@ function Dashboard() {
     fetchLocalidades();
   }, [isAuthenticated, navigate, user]);
 
+  useEffect(() => {
+    console.log("Localidades atualizadas", localidades);
+  }, [localidades]);
+
   if (!isAuthenticated) {
     return null;
   }
@@ -62,23 +66,22 @@ function Dashboard() {
   const totalLocais = localidades.length;
 
   const handleRegister = () => {
-    console.log("Botão clicado");
+    console.log("Botão de cadastro clicado");
     navigate("/cadastroLocalidade");
   };
 
   const handleDelete = async (id) => {
+    console.log("Botão de deletar clicado");
     try {
       alert(`Tentando deletar localidade com id: ${id}`);
       const response = await fetch(`http://localhost:3333/localidade/${id}`, {
         method: "DELETE",
       });
-      console.log(`Resposta do servidor: ${response.status}`);
       if (!response.ok) {
         throw new Error(`Erro ao deletar o destino: ${response.statusText}`);
       }
       setLocalidades(localidades.filter((localidade) => localidade.id !== id));
     } catch (error) {
-      console.error("Erro ao deletar o destino", error);
       setError("Erro ao deletar o destino");
     }
   };
@@ -90,7 +93,7 @@ function Dashboard() {
           <h1 className={styles.h1Dashboard}>Dashboard</h1>
           <LocalCard totalLocais={totalLocais} />
           <h2>Destinos cadastrados</h2>
-          <span>Estes são seus destinos cadastrado das suas aventuras!!!</span>
+          <span>Estes são seus destinos cadastrados das suas aventuras!!!</span>
           <div className={styles.btnContainer}>
             <h3>Viajante: {viajante}</h3>
             <button
@@ -132,7 +135,10 @@ function Dashboard() {
                     <td>{localidade.longitude}</td>
                     <td>
                       <Link className={styles.btnUpdate} to={`/atualizarDestino/${localidade.id}`}>Editar</Link> 
-                      <button className={styles.btnDelete} onClick={() => handleDelete(localidade.id)}>Deletar</button>
+                      <button className={styles.btnDelete} onClick={() =>
+                        {
+                          handleDelete(localidade.id)}
+                        } >Deletar</button>
                     </td>
                   </tr>
                 ))}

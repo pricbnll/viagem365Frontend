@@ -69,9 +69,25 @@ table th {
   cursor: pointer;
   text-decoration: none;
   display: inline-table;
+  border: 1px solid var(--dark-orange);
+  background-color: var(--dark-orange);
 }
 
-.btnUpdate,
+.btnUpdate {
+  height: 20px;
+  width: 70px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: var(--brown);
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  border: 1px solid var(--dark-orange);
+  background-color: var(--dark-orange);
+}
+
 .btnDelete {
   height: 20px;
   width: 70px;
@@ -83,16 +99,6 @@ table th {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-
-}
-
-.btnRegister,
-.btnUpdate {
-  border: 1px solid var(--dark-orange);
-  background-color: var(--dark-orange);
-}
-
-.btnDelete {
   border: 1px solid var(--light-orange);
   background-color: var(--light-orange);
 }

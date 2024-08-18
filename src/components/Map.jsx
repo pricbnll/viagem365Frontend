@@ -29,7 +29,7 @@ Map.propTypes = {
       lng: PropTypes.number.isRequired,
       descricao: PropTypes.string.isRequired,
       destino: PropTypes.string.isRequired,
-    })
+    }).isRequired
   )
 };
 
