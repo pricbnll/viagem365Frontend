@@ -18,9 +18,9 @@ function Sidebar() {
           <img src={travelPointer} alt="Pointer para pontos turísticos." />
           <nav className={styles.nav}>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/dashboard">Seus destinos </NavLink>
             <NavLink to="/atualizarDados">Atualizar dados</NavLink>
-            <NavLink to="/atualizarDestino">Atualizar destino</NavLink>
+            <NavLink to="/perguntas">Dúvidas</NavLink>
+            <NavLink to="/sobre">O Projeto</NavLink>
           </nav>
           <button onClick={handleLogout} className={styles.btnLogout}>
             Sair

@@ -103,6 +103,7 @@ span {
   border-radius: 12px;
   font-size: 1.3rem;
   color: var(--brown);
+  grid-column: span 2;
 }
 
 .btnLogin, .btnDelete {
@@ -111,7 +112,6 @@ span {
 }
 
 .btnRegister {
-  grid-column: span 2;
   border: 1px solid var(--dark-orange);
   background-color: var(--dark-orange);
 }

@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import LocalCard from "../../components/LocalCard";
 import Map from "../../components/Map";
 import Sidebar from "../../components/Sidebar";
-import styles from "./dashboard.module.css"; 
-import Table from "react-bootstrap/Table"; 
+import styles from "./dashboard.module.css";
+import Table from "react-bootstrap/Table";
 
 function Dashboard() {
   const { isAuthenticated, user } = useContext(AuthContext);
@@ -36,13 +36,13 @@ function Dashboard() {
     const fetchLocalidades = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3333/localidade?userId=${user.id}`
+          `http://localhost:3000/localidade?userId=${user.id}`
         );
         if (!response.ok) {
           throw new Error("Não há conexão com a database");
         }
         const data = await response.json();
-        console.log("Dados recebidos:", data); 
+       console.log("Dados recebidos:", data); 
         setLocalidades(data || []);
       } catch (error) {
         console.error("Erro ao buscar os dados", error);
@@ -55,16 +55,35 @@ function Dashboard() {
     fetchLocalidades();
   }, [isAuthenticated, navigate, user]);
 
+  useEffect(() => {
+    console.log("Localidades atualizadas", localidades);
+  }, [localidades]);
+
   if (!isAuthenticated) {
     return null;
   }
 
   const totalLocais = localidades.length;
-  // console.log(totalLocais)
 
   const handleRegister = () => {
-    console.log("Botão clicado");
+    console.log("Botão de cadastro clicado");
     navigate("/cadastroLocalidade");
+  };
+
+  const handleDelete = async (id) => {
+    console.log("Botão de deletar clicado");
+    try {
+      alert(`Tentando deletar localidade com id: ${id}`);
+      const response = await fetch(`http://localhost:3000/localidade/${id}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) {
+        throw new Error(`Erro ao deletar o destino: ${response.statusText}`);
+      }
+      setLocalidades(localidades.filter((localidade) => localidade.id !== id));
+    } catch (error) {
+      setError("Erro ao deletar o destino");
+    }
   };
 
   return (
@@ -74,7 +93,7 @@ function Dashboard() {
           <h1 className={styles.h1Dashboard}>Dashboard</h1>
           <LocalCard totalLocais={totalLocais} />
           <h2>Destinos cadastrados</h2>
-          <span>Estes são seus destinos cadastrado das suas aventuras!!!</span>
+          <span>Estes são seus destinos cadastrados das suas aventuras!!!</span>
           <div className={styles.btnContainer}>
             <h3>Viajante: {viajante}</h3>
             <button
@@ -101,6 +120,7 @@ function Dashboard() {
                   <th>CEP</th>
                   <th>Latitude</th>
                   <th>Longitude</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
               <tbody>
@@ -113,10 +133,16 @@ function Dashboard() {
                     <td>{localidade.cep}</td>
                     <td>{localidade.latitude}</td>
                     <td>{localidade.longitude}</td>
+                    <td>
+                      <Link className={styles.btnUpdate} to={`/atualizarDestino/${localidade.id}`}>Editar</Link> 
+                      <button className={styles.btnDelete} onClick={() =>
+                        {
+                          handleDelete(localidade.id)}
+                        } >Deletar</button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
-              {/* <Link to={`/atualizarDestinos/${localidade.id}`}>Editar</Link> */}
             </Table>
           )}
           <span>Seus destinos no mapa</span>

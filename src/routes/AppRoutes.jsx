@@ -21,7 +21,7 @@ function AppRoutes() {
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/dashboard" element={<Dashboard />} />    
           <Route path="/cadastroLocalidade" element={<RegisterLocalidade />} />    
-          <Route path="/atualizarDestino" element={<UpdateLocalidade />} />    
+          <Route path="/atualizarDestino/:id" element={<UpdateLocalidade />} />    
         </Routes>
       </BrowserRouter>
     </AuthProvider>

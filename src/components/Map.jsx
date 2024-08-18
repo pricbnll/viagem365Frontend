@@ -1,12 +1,11 @@
-import styles from "./map.module.css";
+import PropTypes from "prop-types";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import MarcadoresMap from "./MarcadoresMap";
-import PropTypes from "prop-types";
+import styles from "./map.module.css";
 
-function Map({localidades}) {
-  console.log(localidades)
-  const position = [-27.614160537150866, -48.504904703694876];
+function Map({ localidades }) {
+ const position = [-27.614160537150866, -48.504904703694876];
 
   return (
     <div className={styles.mapContainer}>
@@ -21,6 +20,7 @@ function Map({localidades}) {
     </div>
   );
 }
+
 Map.propTypes = {
   localidades: PropTypes.arrayOf(
     PropTypes.shape({
@@ -29,8 +29,8 @@ Map.propTypes = {
       lng: PropTypes.number.isRequired,
       descricao: PropTypes.string.isRequired,
       destino: PropTypes.string.isRequired,
-    })
-  ),
+    }).isRequired
+  )
 };
 
 export default Map;

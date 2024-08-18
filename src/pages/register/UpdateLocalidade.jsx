@@ -6,7 +6,7 @@ import { useEffect, useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import AddressService from "../../components/ApiCEP";
 import { AuthContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const schema = yup
   .object({
@@ -23,23 +23,46 @@ const schema = yup
   .required();
 
 function UpdateLocalidade() {
-  const { user } = useContext(AuthContext); 
-  const [cep, setCep] = useState("");
+  const { user } = useContext(AuthContext);
+  const { id } = useParams(); 
   const [cepError, setCepError] = useState(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
+    watch,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
   useEffect(() => {
-    console.log("Componente renderizado");
-  }, []);
+    const fetchLocalidade = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/localidade/${id}`);
+        console.log(response)
+        if (!response.ok) {
+          throw new Error(`Erro ao buscar os dados: ${response.statusText}`);
+        }
+        const data = await response.json();
+        console.log("Dados recebidos:", data);
+  
+        setValue("destino", data.destino);
+        setValue("descricao", data.descricao);
+        setValue("localidade", data.localidade);
+        setValue("cep", data.cep);
+        setValue("latitude", data.latitude);
+        setValue("longitude", data.longitude);
+      } catch (error) {
+        console.error("Erro:", error);
+      }
+    };
+  
+    fetchLocalidade();
+  }, [id, setValue]);
+  
 
   async function onSubmit(userData) {
     if (cepError) {
@@ -47,26 +70,45 @@ function UpdateLocalidade() {
       return;
     }
 
-    const userId = user?.id; 
+    const userId = user?.id;
     const dataToSubmit = { ...userData, userId };
 
     try {
-      const response = await fetch("http://localhost:3333/localidade", {
+      const response = await fetch(`http://localhost:3000/localidade/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(dataToSubmit),
       });
-
+      console.log(response)
       if (!response.ok) {
         throw new Error("Erro ao atualizar o local");
       }
 
       alert("Local atualizado com sucesso");
-      navigate ("/dashboard")
+      navigate("/dashboard");
     } catch (error) {
       console.error("Erro:", error);
+    }
+  }
+
+  async function handleDelete(id) {
+    if (window.confirm("Tem certeza que deseja apagar este destino?")) {
+      try {
+        const response = await fetch(`http://localhost:3000/localidade/${id}`, {
+          method: "DELETE",
+        });
+
+        if (!response.ok) {
+          throw new Error("Erro ao deletar o destino");
+        }
+
+        alert("Destino deletado com sucesso");
+        navigate("/dashboard");
+      } catch (error) {
+        console.error("Erro:", error);
+      }
     }
   }
 
@@ -122,14 +164,12 @@ function UpdateLocalidade() {
                 type="text"
                 className={styles.formControl}
                 placeholder="Digite o CEP do destino"
-                {...register("cep", {
-                  onChange: (e) => setCep(e.target.value),
-                })}
+                {...register("cep")}
                 autoComplete="postal-code"
               />
               <span className={styles.errorMessage}>{errors.cep?.message}</span>
               <AddressService
-                cep={cep}
+                cep={watch("cep")}
                 setValue={setValue}
                 setCepError={setCepError}
               />
@@ -163,7 +203,11 @@ function UpdateLocalidade() {
             <button type="submit" className={styles.btnRegister}>
               Atualizar
             </button>
-            <button type="submit" className={styles.btnDelete}>
+            <button
+              type="button"
+              className={styles.btnDelete}
+              onClick={() => handleDelete(id)} 
+            >
               Apagar destino
             </button>
           </form>
