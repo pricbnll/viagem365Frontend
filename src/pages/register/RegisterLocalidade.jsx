@@ -47,11 +47,11 @@ function RegisterLocalidade() {
       return;
     }
 
-    const userId = user?.id; // Obtém o ID do usuário autenticado
+    const userId = user?.id; 
     const dataToSubmit = { ...userData, userId };
 
     try {
-      const response = await fetch("http://localhost:3333/localidade", {
+      const response = await fetch("http://localhost:3000/localidade", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

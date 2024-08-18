@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
     const storedUser = localStorage.getItem("UserViagem365");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
-      console.log("Usuário carregado do localStorage:", parsedUser); // Log para depuração
+      console.log("Usuário carregado do localStorage:", parsedUser); 
       setUser(parsedUser);
       setIsAuthenticated(true);
     }
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch('http://localhost:3333/users');
+      const response = await fetch('http://localhost:3000/users');
       if (!response.ok) {
         throw new Error('Erro ao buscar usuários');
       }
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
       const foundUser = users.find((user) => user.email === email && user.senha === password);
 
       if (foundUser) {
-        const userData = { id: foundUser.id, nome: foundUser.nome }; // Inclua o ID e o nome do usuário
+        const userData = { id: foundUser.id, nome: foundUser.nome }; 
         localStorage.setItem("UserViagem365", JSON.stringify(userData));
         setUser(userData);
         setIsAuthenticated(true);
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth= () => useContext(AuthContext);
 
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,

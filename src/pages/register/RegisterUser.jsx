@@ -46,7 +46,7 @@ function RegisterUser() {
       return;
     }
     try {
-      const cpfExistente = await fetch(`http://localhost:3333/users?cpf=${userData.cpf}`);
+      const cpfExistente = await fetch(`http://localhost:3000/users?cpf=${userData.cpf}`);
       const cpfData = await cpfExistente.json();
 
       if (cpfData.length > 0) {
@@ -54,7 +54,7 @@ function RegisterUser() {
         return;
       }
 
-      const response = await fetch("http://localhost:3333/users", {
+      const response = await fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

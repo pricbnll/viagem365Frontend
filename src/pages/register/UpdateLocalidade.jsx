@@ -24,7 +24,7 @@ const schema = yup
 
 function UpdateLocalidade() {
   const { user } = useContext(AuthContext);
-  const { id } = useParams(); // Pega o ID da URL
+  const { id } = useParams(); 
   const [cepError, setCepError] = useState(null);
   const navigate = useNavigate();
 
@@ -41,13 +41,14 @@ function UpdateLocalidade() {
   useEffect(() => {
     const fetchLocalidade = async () => {
       try {
-        const response = await fetch(`http://localhost:3333/localidade/${id}`);
+        const response = await fetch(`http://localhost:3000/localidade/${id}`);
+        console.log(response)
         if (!response.ok) {
-          throw new Error("Erro ao buscar os dados");
+          throw new Error(`Erro ao buscar os dados: ${response.statusText}`);
         }
         const data = await response.json();
-
-        // Preenche o formulário com os dados recebidos
+        console.log("Dados recebidos:", data);
+  
         setValue("destino", data.destino);
         setValue("descricao", data.descricao);
         setValue("localidade", data.localidade);
@@ -58,9 +59,10 @@ function UpdateLocalidade() {
         console.error("Erro:", error);
       }
     };
-
+  
     fetchLocalidade();
   }, [id, setValue]);
+  
 
   async function onSubmit(userData) {
     if (cepError) {
@@ -72,14 +74,14 @@ function UpdateLocalidade() {
     const dataToSubmit = { ...userData, userId };
 
     try {
-      const response = await fetch(`http://localhost:3333/localidade/${id}`, {
+      const response = await fetch(`http://localhost:3000/localidade/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(dataToSubmit),
       });
-
+      console.log(response)
       if (!response.ok) {
         throw new Error("Erro ao atualizar o local");
       }
@@ -88,6 +90,25 @@ function UpdateLocalidade() {
       navigate("/dashboard");
     } catch (error) {
       console.error("Erro:", error);
+    }
+  }
+
+  async function handleDelete(id) {
+    if (window.confirm("Tem certeza que deseja apagar este destino?")) {
+      try {
+        const response = await fetch(`http://localhost:3000/localidade/${id}`, {
+          method: "DELETE",
+        });
+
+        if (!response.ok) {
+          throw new Error("Erro ao deletar o destino");
+        }
+
+        alert("Destino deletado com sucesso");
+        navigate("/dashboard");
+      } catch (error) {
+        console.error("Erro:", error);
+      }
     }
   }
 
@@ -182,7 +203,11 @@ function UpdateLocalidade() {
             <button type="submit" className={styles.btnRegister}>
               Atualizar
             </button>
-            <button type="button" className={styles.btnDelete}>
+            <button
+              type="button"
+              className={styles.btnDelete}
+              onClick={() => handleDelete(id)} 
+            >
               Apagar destino
             </button>
           </form>

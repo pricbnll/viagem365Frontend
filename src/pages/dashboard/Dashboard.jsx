@@ -36,13 +36,13 @@ function Dashboard() {
     const fetchLocalidades = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3333/localidade?userId=${user.id}`
+          `http://localhost:3000/localidade?userId=${user.id}`
         );
         if (!response.ok) {
           throw new Error("Não há conexão com a database");
         }
         const data = await response.json();
-        console.log("Dados recebidos:", data);
+       console.log("Dados recebidos:", data); 
         setLocalidades(data || []);
       } catch (error) {
         console.error("Erro ao buscar os dados", error);
@@ -74,7 +74,7 @@ function Dashboard() {
     console.log("Botão de deletar clicado");
     try {
       alert(`Tentando deletar localidade com id: ${id}`);
-      const response = await fetch(`http://localhost:3333/localidade/${id}`, {
+      const response = await fetch(`http://localhost:3000/localidade/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
