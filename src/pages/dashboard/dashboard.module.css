@@ -35,7 +35,7 @@ h3 {
 table {
   font-size: 0.9rem;
   border: 2px solid var(--dark-orange);
-  max-width: 90%;
+  width: 100%;
 }
 
 table tr:nth-child(odd) {
@@ -86,6 +86,7 @@ table th {
   margin-top: 10px;
   border: 1px solid var(--dark-orange);
   background-color: var(--dark-orange);
+  gap: 5px;
 }
 
 .btnDelete {
@@ -101,4 +102,27 @@ table th {
   margin-top: 10px;
   border: 1px solid var(--light-orange);
   background-color: var(--light-orange);
+}
+
+.acoesContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.acoesContainer a:hover,
+.acoesContainer button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 971px) {
+  .acoesContainer {
+    flex-direction: column;
+  }
+
+  .acoesContainer a,
+  .acoesContainer button {
+    margin-bottom: 5px;
+  }
 }
