@@ -42,7 +42,7 @@ function Dashboard() {
           throw new Error("Não há conexão com a database");
         }
         const data = await response.json();
-       console.log("Dados recebidos:", data); 
+        console.log("Dados recebidos:", data);
         setLocalidades(data || []);
       } catch (error) {
         console.error("Erro ao buscar os dados", error);
@@ -110,7 +110,7 @@ function Dashboard() {
           ) : error ? (
             <p>{error}</p>
           ) : (
-            <Table striped bordered hover variant="dark">
+            <Table >
               <thead>
                 <tr>
                   <th>#</th>
@@ -134,11 +134,22 @@ function Dashboard() {
                     <td>{localidade.latitude}</td>
                     <td>{localidade.longitude}</td>
                     <td>
-                      <Link className={styles.btnUpdate} to={`/atualizarDestino/${localidade.id}`}>Editar</Link> 
-                      <button className={styles.btnDelete} onClick={() =>
-                        {
-                          handleDelete(localidade.id)}
-                        } >Deletar</button>
+                      <div className={styles.acoesContainer}>
+                        <Link
+                          className={styles.btnUpdate}
+                          to={`/atualizarDestino/${localidade.id}`}
+                        >
+                          Editar
+                        </Link>
+                        <button
+                          className={styles.btnDelete}
+                          onClick={() => {
+                            handleDelete(localidade.id);
+                          }}
+                        >
+                          Deletar
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
