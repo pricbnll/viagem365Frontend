@@ -15,11 +15,20 @@ A Viagem365 deseja automatizar algumas ações de atendimento, criando um sistem
 
   ## 📉 Diagrama telas
 
-<p>
-  <img src = "./src/assets/Diagrama de telas.png"
-</p>
+  <img src = "./src/assets/Diagrama de telas.png" />
 
 ## 🤖 Como rodar o repositório:
+
+Primeiros passos:
+
+    1. `git clone https://github.com/pricbnll/viagem365Frontend.git`
+    2. `cd viagem365Frontend`
+    3. `npm install`
+    4. `npm run dev`
+    5. `npm run server`
+
+
+Mais detalhado:
 
 Clone o repositório em sua máquina em uma pasta local 
 
@@ -56,13 +65,23 @@ VITE v5.3.2 ready in 168 ms
 to expose ➜ press h + enter to show help
 ```
 
-Instalado Bootstrap com a importação no arquivo main.jsx
+Rodar json server:
 ```
-import 'bootstrap/dist/css/bootstrap.min.css'
+npx json-server db.json
 ```
 ```
-npm install bootstrap@5.3.3
+Endpoints:
+http://localhost:3000/users 
+http://localhost:3000/localidade 
 ```
+
+                      
+##  ✅  Dependências instaladas: 
+
+Instalado React Bootstrap 
+`````
+npm install react-bootstrap bootstrap
+`````
 
 Instalei Reach Router Dom
 ```
@@ -79,16 +98,7 @@ Instalei Json Server para popular
 npm i json-server --save-dev
 ```
 
-Criei um arquivo db.json e para rodar:
-No package-json fiz um script para rodar com `npm run server` na porta 3333
-``` "server": "npx json-server db.json -p 3333"``` 
-```
-Endpoints:
-http://localhost:3333/users
-http://localhost:3333/localidade
-```
-
-✅ Algumas páginas usei validações com YUP
+Algumas páginas usei validações com YUP
 
 Instalar Yup `npm install @hookform/resolvers yup`
 ```
@@ -102,14 +112,18 @@ npm install prop-types
 ````
 Adicionei `import PropTypes from 'prop-types';`
 
-
 Instalei AXIOS
 ```
 npm install axios
 ```
 Adicionei `import axios from 'axios'`
 
-
+Instalei React Leaflet
+```
+npm install react react-dom leaflet
+npm install react-leaflet
+```
+Adicionei `import { MapContainer, TileLayer } from 'react-leaflet'`
 
 
 ## 🌊 GitFlow:
@@ -134,7 +148,22 @@ DEVELOP:
 
 *feature/ApiCep - Criei uma pasta component com o documento ApiCep.jsx para preenchimento automático quando digito o CEP
 
-*feature/sidebar - criar uma sidebar que acompanha na dashboard, registerLocal, editar local
+*feature/sidebar - Criei uma pasta component com o documento Sidebar.jsx com links para Home, dúvidas e sobre o projeto. Tem um botão de sair que fará o logOut.
+
+*feature/dashboard - criei uma tabela com os locais cadastrados do usuário logado. Na tabela, adicionei um botão para excluir o local, passando o ID do local para a URL. Na página de dashboard, adicionei um link para a página de atualização de local, passando o ID do local na URL. Fiz o card com total de destinos - component>LocalCard. Tem o nome do viajante e um botão para cadastrar mais aventuras.
+
+*feature/RegisterUser-postJson - Nao cadastrar cpf existente duas vezes e cadastrar user novo no db.json
+
+*feature/Map -  utilizando React Leaflet para colocar um pin nos destinos cadastrados do usuário logado. 
+
+*feature/RegisterLocalidade - Criei uma página para cadastrar um novo destino do usuário logado. Utilizei o mesmo formulário do RegisterUser. No campo CEP utilizei a API do ViaCEP para preencher automaticamente os campos de endereço. Ao cadastrar, o novo destino é adicionado à tabela na dashboard, com validações e estilizações
+No Dashboard, adicionei um link para a página de atualização de destino passando o ID da localidade na URL. Na página de atualização já carreguei os dados da localidade ao montar o componente, usando o ID da URL.
+
+*feature/updateLocalidade - Criei uma página para atualizar um destino do usuário logado. Utilizei o mesmo formulário do RegisterUser. No campo CEP utilizei a API do ViaCEP para preencher automaticamente os campos de latitude e longitude. O destino é atualizado na tabela na dashboard.
+
+*feature/questions - Criei uma página para responder perguntas sobre o projeto. 
+
+*feature/about - Criei uma página para falar sobre o projeto.
 
 
 
@@ -157,12 +186,23 @@ Caso tenha alguma dúvida!!
 
 - O número de CPF e endereço de email sempre deveram ser únicos, não podendo cadastrar mais de uma pessoa a mesma informação.
 
-- 
+- Senha tem que ter no mínimo 6 letras, campos obrigatórios no formulário.
+
+- Somente o usuário pode deletar e atualizar seus destinos, não podendo deletar destinos de outros usuários.
+
+- No cadastro de localidades e atualização quando colocar o CEP preencherá automaticamente a cidade e estado, separado por virgula no campo do input de Localidade.
+
+- Na pagina dashboard quando a tela fica maior que 961x779px some as funcionalidades de click do  link editar e botão deletar e para ajustar coloquei width=100vw fixo para nao ter este problema mas quero saber como arrumar
 
   
 ## 🛠️ Construído com
 
 - Trello - todos os passos que fiz para criar, roteiro da aplicação, regras de negócios e validações exigidas
+
+<p>
+    <img src="./src/assets/Trello.png" />
+</p>
+
 - VsCode - para formar o código em Node.js
 - GitHub - utilizando o GitFlow, criado a main, develop e algumas branches para desenvolver cada passo exigido (rotas, Hooks do React, API externa para obter coordenadas geográficas a partir do CEP informado...)
 - Vite
@@ -182,14 +222,15 @@ Caso tenha alguma dúvida!!
 
 - Implementar responsividade para adaptação em telas grandes (como monitores) e telas pequenas (como smartphones e tablets).
 - Na tela de cadastro, ao colocar o CEP cuidar para não colocar traço pois não funcionará. 
-- Utilizar a biblioteca Leaflet para criar um mapa e localizar os pontos de interesses.
-
+- Fazer um pagina para atualizar dados do usuário
+- Fazer um Modal estilizado para perguntar se quer realmente deletar o destino
+- Estudar mais CSS kkk
 
 ## 🎁 Expressões de gratidão
 
 * O Floripa Mais Tec é uma iniciativa da Prefeitura de Florianópolis, em parceria com SENAI/SC, SEBRAE e ACATE, que visa democratizar o acesso ao ensino tecnológico para todos, oferecendo cursos de Tecnologia gratuitos!  📢;
 * Lab365 e todos os monitores;
-* Aos melhores colegas de classe de TRIP e NATURE que alguém poderia ter! 
+* Aos melhores colegas de classe de TRIP e NATURE que alguém poderia ter! Este módulo foi mais na raça com ajuda do ChatGPT
 * Qualquer dúvida ou sugestão de melhorar o código eu aceito - algumas escrevi acima!!!
 
 

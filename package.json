@@ -8,20 +8,22 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "npx json-server db.json -p 3333"
+    "server": "npx json-server db.json"
   },
   "dependencies": {
-    "@eslint/config-array": "^0.17.1",
+    "@eslint/config-array": "^0.18.0",
     "@eslint/object-schema": "^2.1.4",
     "@hookform/resolvers": "^3.9.0",
     "axios": "^1.7.4",
-    "bootstrap": "^5.3.3",
     "glob": "^11.0.0",
+    "leaflet": "^1.9.4",
     "lru-cache": "^11.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.2",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.26.0",
     "rimraf": "^6.0.1",
     "yup": "^1.4.0"

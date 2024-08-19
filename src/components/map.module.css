@@ -1,0 +1,9 @@
+
+.mapContainer {
+    min-height: 400px;
+    border: 2px solid var(--dark-orange);
+    margin-bottom: 50px;
+    margin-left: 18vw;
+    margin-right: 10px;
+    border-radius: 5px;
+  }

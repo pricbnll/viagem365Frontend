@@ -1,0 +1,55 @@
+.aboutContainer {
+  font-size: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-color: var(--light-bege);
+  margin-left: 70px;
+  margin-right: 70px;
+  padding: 50px;
+  opacity: 0.8;
+}
+
+.container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/mapa-viagem.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.h1About {
+  color: var(--dark-yellow);
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.pAbout {
+  font-size: 1.5rem;
+  color: var(--brown);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.spanAbout {
+  color: var(--terracota);
+  padding: 20px;
+}

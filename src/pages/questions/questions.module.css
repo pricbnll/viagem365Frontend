@@ -1,0 +1,68 @@
+.container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/mapa-viagem.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.h1Questions {
+  color: var(--dark-yellow);
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.questionsContainer {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--light-bege);
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.pQuestions {
+  font-size: 1.8rem;
+  color: var(--dark-orange);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.ulQuestions {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.liQuestions {
+  list-style-type: none;
+  font-size: 1.3rem;
+  color: var(--brown);
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+em {
+  font-style: italic;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  color: var(--light-blue);
+  margin-bottom: 10px;
+}

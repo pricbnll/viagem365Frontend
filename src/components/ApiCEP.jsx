@@ -1,25 +1,28 @@
 import { useEffect, useState } from "react";
-import PropTypes from 'prop-types';
-import axios from 'axios'
+import PropTypes from "prop-types";
+import axios from "axios";
 
 function AddressService({ cep, setValue, setCepError }) {
-    const [addressLoading, setAddressLoading] = useState(false);
-  
-    useEffect(() => {
+  const [addressLoading, setAddressLoading] = useState(false);
 
-      if (typeof cep === 'string' && cep.length === 8) {
+  useEffect(() => {
+    if (cep) {
+      const cepString = cep.toString();
+      const formattedCep = cepString.replace("-", "");
+
+      if (formattedCep.length === 8) {
         setAddressLoading(true);
-        axios.get(`https://cep.awesomeapi.com.br/json/${cep}`)
-          .then(response => {
-            //console.log(response.data)
+        axios
+          .get(`https://cep.awesomeapi.com.br/json/${formattedCep}`)
+          .then((response) => {
             const { address, district, city, state, lng, lat } = response.data;
             setValue("endereco", address);
-            setValue("bairro", district); 
+            setValue("bairro", district);
             setValue("cidade", city);
             setValue("estado", state);
-            setValue("longitude", lng || '');
-            setValue("latitude", lat || '');
-            setCepError(null); 
+            setValue("longitude", lng || "");
+            setValue("latitude", lat || "");
+            setCepError(null);
           })
           .catch(() => {
             setCepError("CEP não encontrado.");
@@ -27,18 +30,19 @@ function AddressService({ cep, setValue, setCepError }) {
           .finally(() => {
             setAddressLoading(false);
           });
+      } else {
+        setCepError("CEP inválido.");
       }
-    }, [cep, setValue, setCepError]);
+    }
+  }, [cep, setValue, setCepError]);
 
   return addressLoading ? <p>Carregando...</p> : null;
 }
 
+AddressService.propTypes = {
+  cep: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
+  setCepError: PropTypes.func.isRequired,
+}.isRequired;
+
 export default AddressService;
-
-AddressService.propTypes = { 
-    cep: PropTypes.string.isRequired,
-    setValue: PropTypes.func.isRequired,
-    setCepError: PropTypes.func.isRequired,
-  };
-
- 

@@ -2,6 +2,8 @@ h1 {
   color: var(--bege);
   text-align: center;
   grid-column: span 2;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .container {
@@ -24,6 +26,7 @@ h1 {
 
 .formDiv {
   width: 70%;
+  min-height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,34 +55,33 @@ h1 {
   padding: 15px;
 }
 
+textarea {
+  grid-column: span 2;
+  resize: vertical;
+  min-height: 100px;
+}
+
 span {
   display: block;
   color: var(--dark-orange);
   margin-top: 5px;
 }
 
-.btnRegister {
-  grid-column: span 2;
-  height: 50px;
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid var(--light-orange);
-  background-color: var(--light-orange);
-  font-size: 1.3rem;
-  color: var(--brown);
-}
-
-p {
+.divLogin {
   grid-column: span 2;
   display: flex;
-  align-items:end;
   justify-content: center;
+}
+
+.pLogin {
+  display: inline;
   color: var(--light-orange);
   font-size: 1.1rem;
 }
 
 .spanLogin {
   color: var(--dark-orange);
+  display: inline;
   cursor: pointer;
   margin-left: 5px;
 }
@@ -91,6 +93,25 @@ p {
 }
 
 .errorMessage {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
+.btnLogin, .btnDelete,
+.btnRegister {
+  height: 50px;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  color: var(--brown);
+  grid-column: span 2;
+}
+
+.btnLogin, .btnDelete {
+  border: 1px solid var(--light-orange);
+  background-color: var(--light-orange);
+}
+
+.btnRegister {
+  border: 1px solid var(--dark-orange);
+  background-color: var(--dark-orange);
+}
