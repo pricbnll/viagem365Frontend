@@ -15,11 +15,20 @@ A Viagem365 deseja automatizar algumas ações de atendimento, criando um sistem
 
   ## 📉 Diagrama telas
 
-<p>
-  <img src = "./src/assets/Diagrama de telas.png"
-</p>
+  <img src = "./src/assets/Diagrama de telas.png" />
 
 ## 🤖 Como rodar o repositório:
+
+Primeiros passos:
+
+    1. `git clone https://github.com/pricbnll/viagem365Frontend.git`
+    2. `cd viagem365Frontend`
+    3. `npm install`
+    4. `npm run dev`
+    5. `npm run server`
+
+
+Mais detalhado:
 
 Clone o repositório em sua máquina em uma pasta local 
 
@@ -29,7 +38,7 @@ Criei uma pasta com Vite ```npm create vite@latest```. Coloquei um nome de pasta
 Após isso transferi todos os arquivos para a pasta viagem365Frontend e deletei esta que ficou vazia, assim so tenho uma pasta com tudo - dependência Vite e git.
 
 Agora você, após clonar, rode os seguintes comandos para instalar as dependências que estão nas pastas 'package.json'.
-````
+
 cd viagem365
 npm install
 npm run
@@ -117,8 +126,6 @@ npm install react-leaflet
 Adicionei `import { MapContainer, TileLayer } from 'react-leaflet'`
 
 
-
-
 ## 🌊 GitFlow:
 
 Iniciei na main mesmo e organizei as pastas, deletei arquivos e iniciei limpo.
@@ -183,10 +190,17 @@ Caso tenha alguma dúvida!!
 
 - Somente o usuário pode deletar e atualizar seus destinos, não podendo deletar destinos de outros usuários.
 
+- No cadastro de localidades e atualização quando colocar o CEP preencherá automaticamente a cidade e estado, separado por virgula no campo do input de Localidade.
+
+- Na pagina dashboard quando a tela fica maior que 961x779px some as funcionalidades de click do  link editar e botão deletar e para ajustar coloquei width=100vw fixo para nao ter este problema mas quero saber como arrumar
+
   
 ## 🛠️ Construído com
 
 - Trello - todos os passos que fiz para criar, roteiro da aplicação, regras de negócios e validações exigidas
+
+    <img src="./src/assets/Trello.png" />
+
 - VsCode - para formar o código em Node.js
 - GitHub - utilizando o GitFlow, criado a main, develop e algumas branches para desenvolver cada passo exigido (rotas, Hooks do React, API externa para obter coordenadas geográficas a partir do CEP informado...)
 - Vite
