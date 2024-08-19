@@ -38,7 +38,7 @@ Criei uma pasta com Vite ```npm create vite@latest```. Coloquei um nome de pasta
 Após isso transferi todos os arquivos para a pasta viagem365Frontend e deletei esta que ficou vazia, assim so tenho uma pasta com tudo - dependência Vite e git.
 
 Agora você, após clonar, rode os seguintes comandos para instalar as dependências que estão nas pastas 'package.json'.
-
+````
 cd viagem365
 npm install
 npm run
@@ -81,7 +81,7 @@ http://localhost:3000/localidade
 Instalado React Bootstrap 
 `````
 npm install react-bootstrap bootstrap
-``````
+`````
 
 Instalei Reach Router Dom
 ```
@@ -199,7 +199,9 @@ Caso tenha alguma dúvida!!
 
 - Trello - todos os passos que fiz para criar, roteiro da aplicação, regras de negócios e validações exigidas
 
+<p>
     <img src="./src/assets/Trello.png" />
+</p>
 
 - VsCode - para formar o código em Node.js
 - GitHub - utilizando o GitFlow, criado a main, develop e algumas branches para desenvolver cada passo exigido (rotas, Hooks do React, API externa para obter coordenadas geográficas a partir do CEP informado...)
