@@ -6,6 +6,7 @@ import Sidebar from "../components/Sidebar.jsx";
 import Dashboard from "../pages/dashboard/Dashboard.jsx";
 import RegisterLocalidade from "../pages/register/RegisterLocalidade.jsx";
 import UpdateLocalidade from "../pages/register/UpdateLocalidade.jsx";
+import Questions from "../pages/questions/Questions.jsx";
 
 function AppRoutes() {
   const auth = useAuth(); 
@@ -22,6 +23,7 @@ function AppRoutes() {
           <Route path="/dashboard" element={<Dashboard />} />    
           <Route path="/cadastroLocalidade" element={<RegisterLocalidade />} />    
           <Route path="/atualizarDestino/:id" element={<UpdateLocalidade />} />    
+          <Route path="/duvidas" element={<Questions />} />    
         </Routes>
       </BrowserRouter>
     </AuthProvider>
