@@ -7,6 +7,7 @@ import Dashboard from "../pages/dashboard/Dashboard.jsx";
 import RegisterLocalidade from "../pages/register/RegisterLocalidade.jsx";
 import UpdateLocalidade from "../pages/register/UpdateLocalidade.jsx";
 import Questions from "../pages/questions/Questions.jsx";
+import About from "../pages/about/About.jsx";
 
 function AppRoutes() {
   const auth = useAuth(); 
@@ -24,6 +25,7 @@ function AppRoutes() {
           <Route path="/cadastroLocalidade" element={<RegisterLocalidade />} />    
           <Route path="/atualizarDestino/:id" element={<UpdateLocalidade />} />    
           <Route path="/duvidas" element={<Questions />} />    
+          <Route path="/sobre" element={<About />} />    
         </Routes>
       </BrowserRouter>
     </AuthProvider>
