@@ -60,6 +60,12 @@ Rodar json server:
 ```
 npx json-server db.json
 ```
+```
+Endpoints:
+http://localhost:3000/users 
+http://localhost:3000/localidade 
+```
+
                       
 ##  ✅  Dependências instaladas: 
 
@@ -83,15 +89,6 @@ Instalei Json Server para popular
 npm i json-server --save-dev
 ```
 
-Criei um arquivo db.json e para rodar:
-No package-json fiz um script para rodar com `npm run server` na porta 3333
-``` "server": "npx json-server db.json -p 3333"``` 
-```
-Endpoints:
-http://localhost:3333/users
-http://localhost:3333/localidade
-```
-
 Algumas páginas usei validações com YUP
 
 Instalar Yup `npm install @hookform/resolvers yup`
@@ -105,7 +102,6 @@ Instalei a biblioteca 'prop-types' para incluir validações
 npm install prop-types
 ````
 Adicionei `import PropTypes from 'prop-types';`
-
 
 Instalei AXIOS
 ```
@@ -145,16 +141,22 @@ DEVELOP:
 
 *feature/ApiCep - Criei uma pasta component com o documento ApiCep.jsx para preenchimento automático quando digito o CEP
 
-*feature/sidebar - criar uma sidebar que acompanha na dashboard, registerLocal, editar local
+*feature/sidebar - Criei uma pasta component com o documento Sidebar.jsx com links para Home, dúvidas e sobre o projeto. Tem um botão de sair que fará o logOut.
 
-*feature/dashboard -  feito o card com total de destinos - component>LocalCard, a tabela com cada destino do usuário logado e suas estilizações
+*feature/dashboard - criei uma tabela com os locais cadastrados do usuário logado. Na tabela, adicionei um botão para excluir o local, passando o ID do local para a URL. Na página de dashboard, adicionei um link para a página de atualização de local, passando o ID do local na URL. Fiz o card com total de destinos - component>LocalCard. Tem o nome do viajante e um botão para cadastrar mais aventuras.
 
 *feature/RegisterUser-postJson - Nao cadastrar cpf existente duas vezes e cadastrar user novo no db.json
 
-*feature/Map - utilizando React Leaflet para colocar um pin nos destinos cadastrados do usuário logado. 
+*feature/Map -  utilizando React Leaflet para colocar um pin nos destinos cadastrados do usuário logado. 
 
 *feature/RegisterLocalidade - Criei uma página para cadastrar um novo destino do usuário logado. Utilizei o mesmo formulário do RegisterUser. No campo CEP utilizei a API do ViaCEP para preencher automaticamente os campos de endereço. Ao cadastrar, o novo destino é adicionado à tabela na dashboard, com validações e estilizações
 No Dashboard, adicionei um link para a página de atualização de destino passando o ID da localidade na URL. Na página de atualização já carreguei os dados da localidade ao montar o componente, usando o ID da URL.
+
+*feature/updateLocalidade - Criei uma página para atualizar um destino do usuário logado. Utilizei o mesmo formulário do RegisterUser. No campo CEP utilizei a API do ViaCEP para preencher automaticamente os campos de latitude e longitude. O destino é atualizado na tabela na dashboard.
+
+*feature/questions - Criei uma página para responder perguntas sobre o projeto. 
+
+*feature/about - Criei uma página para falar sobre o projeto.
 
 
 
@@ -177,7 +179,9 @@ Caso tenha alguma dúvida!!
 
 - O número de CPF e endereço de email sempre deveram ser únicos, não podendo cadastrar mais de uma pessoa a mesma informação.
 
-- 
+- Senha tem que ter no mínimo 6 letras, campos obrigatórios no formulário.
+
+- Somente o usuário pode deletar e atualizar seus destinos, não podendo deletar destinos de outros usuários.
 
   
 ## 🛠️ Construído com
@@ -202,14 +206,15 @@ Caso tenha alguma dúvida!!
 
 - Implementar responsividade para adaptação em telas grandes (como monitores) e telas pequenas (como smartphones e tablets).
 - Na tela de cadastro, ao colocar o CEP cuidar para não colocar traço pois não funcionará. 
-- Utilizar a biblioteca Leaflet para criar um mapa e localizar os pontos de interesses.
-
+- Fazer um pagina para atualizar dados do usuário
+- Fazer um Modal estilizado para perguntar se quer realmente deletar o destino
+- Estudar mais CSS kkk
 
 ## 🎁 Expressões de gratidão
 
 * O Floripa Mais Tec é uma iniciativa da Prefeitura de Florianópolis, em parceria com SENAI/SC, SEBRAE e ACATE, que visa democratizar o acesso ao ensino tecnológico para todos, oferecendo cursos de Tecnologia gratuitos!  📢;
 * Lab365 e todos os monitores;
-* Aos melhores colegas de classe de TRIP e NATURE que alguém poderia ter! 
+* Aos melhores colegas de classe de TRIP e NATURE que alguém poderia ter! Este módulo foi mais na raça com ajuda do ChatGPT
 * Qualquer dúvida ou sugestão de melhorar o código eu aceito - algumas escrevi acima!!!
 
 
