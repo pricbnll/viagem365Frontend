@@ -2,7 +2,6 @@ import mapaViagem from "../../assets/mapa-viagem.jpg";
 import Login from "../login/Login";
 import styles from "./home.module.css";
 
-
 function Home() {
   return (
     <div className={styles.container}>
@@ -10,7 +9,7 @@ function Home() {
         <img src={mapaViagem} alt="foto de planejamento de viagem" />
       </div>
       <div className={styles.formDiv}>
-        <Login/>
+        <Login />
       </div>
     </div>
   );
