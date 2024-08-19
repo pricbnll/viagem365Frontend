@@ -1,4 +1,5 @@
-import styles from "./login.module.css"
+import styles from "./login.module.css";
+import mapaAirplane from "../../assets/card travel.png"
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -20,7 +21,7 @@ const schema = yup
 
 function Login() {
   const navigate = useNavigate();
-  const { login } = useAuth()
+  const { login } = useAuth();
 
   const {
     register,
@@ -52,7 +53,11 @@ function Login() {
           className={styles.formContainer}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h1 className={styles.h1Login}>Efetue seu Login</h1>
+          <div className={styles.title}>
+            <h1 className={styles.title}>Viagem365</h1>
+            <img src={mapaAirplane} alt="Mapa com avião" />
+          </div>
+          <h2 className={styles.h2Login}>Efetue seu Login</h2>
           <p className={styles.greyQoRegular}>
             Experimente ter seus destinos salvos em uma plataforma divertida e
             interativa! Guarde seus destinos aqui!!
@@ -64,10 +69,9 @@ function Login() {
               className={styles.formControl}
               placeholder="Digite seu email"
               {...register("email", { required: true })}
+              autoComplete="email"
             />
-            <span className={styles.errorMessage}>
-              {errors.email?.message}
-            </span>
+            <span className={styles.errorMessage}>{errors.email?.message}</span>
           </div>
           <div>
             <label className={styles.formLabel}>Senha</label>
@@ -76,7 +80,9 @@ function Login() {
               className={styles.formControl}
               placeholder="Digite sua senha"
               {...register("password", { required: true })}
+              autoComplete="current-password"
             />
+
             <span className={styles.errorMessage}>
               {errors.password?.message}
             </span>

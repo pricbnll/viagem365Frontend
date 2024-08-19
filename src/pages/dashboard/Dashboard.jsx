@@ -11,8 +11,8 @@ function Dashboard() {
   const { isAuthenticated, user } = useContext(AuthContext);
   const [localidades, setLocalidades] = useState([]);
   const [viajante, setViajante] = useState("Nome do Viajante");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,8 +24,6 @@ function Dashboard() {
 
     if (!user) {
       console.error("Usuário não definido");
-      setError("Usuário não definido");
-      setLoading(false);
       return;
     }
 
@@ -46,17 +44,13 @@ function Dashboard() {
         setLocalidades(data || []);
       } catch (error) {
         console.error("Erro ao buscar os dados", error);
-        setError("Erro ao buscar os dados");
-      } finally {
-        setLoading(false);
-      }
-    };
+    }};
 
     fetchLocalidades();
   }, [isAuthenticated, navigate, user]);
 
   useEffect(() => {
-    console.log("Localidades atualizadas", localidades);
+    console.log("Localidades atualizadas", localidades.userId);
   }, [localidades]);
 
   if (!isAuthenticated) {
@@ -82,7 +76,7 @@ function Dashboard() {
       }
       setLocalidades(localidades.filter((localidade) => localidade.id !== id));
     } catch (error) {
-      setError("Erro ao deletar o destino");
+      console.log("Erro ao deletar o destino");
     }
   };
 
@@ -92,7 +86,7 @@ function Dashboard() {
         <div className={styles.localContainer}>
           <h1 className={styles.h1Dashboard}>Dashboard</h1>
           <LocalCard totalLocais={totalLocais} />
-          <h2>Destinos cadastrados</h2>
+          <h2 className={styles.h2Dashboard}>Destinos cadastrados</h2>
           <span>Estes são seus destinos cadastrados das suas aventuras!!!</span>
           <div className={styles.btnContainer}>
             <h3>Viajante: {viajante}</h3>
@@ -104,12 +98,6 @@ function Dashboard() {
               Cadastrar mais aventuras
             </button>
           </div>
-
-          {loading ? (
-            <p>Carregando...</p>
-          ) : error ? (
-            <p>{error}</p>
-          ) : (
             <Table >
               <thead>
                 <tr>
@@ -155,7 +143,6 @@ function Dashboard() {
                 ))}
               </tbody>
             </Table>
-          )}
           <span>Seus destinos no mapa</span>
         </div>
 

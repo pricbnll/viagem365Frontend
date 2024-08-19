@@ -49,26 +49,41 @@ function RegisterUser() {
       const cpfExistente = await fetch(`http://localhost:3000/users?cpf=${userData.cpf}`);
       const cpfData = await cpfExistente.json();
 
+      const nomeExistente = await fetch(`http://localhost:3000/users?nome=${userData.nome}`);
+      const nomeData = await nomeExistente.json();
+
       if (cpfData.length > 0) {
         alert("Este CPF já está cadastrado.");
         return;
       }
 
-      const response = await fetch("http://localhost:3000/users", {
+      if(nomeData === nomeExistente) {
+        alert("Este nome já está cadastrado.");
+        return;
+      }
+
+      const resp = await fetch("http://localhost:3000/users");
+      const users = await resp.json();
+      const maxId = users.length > 0 ? Math.max(...users.map(user => user.id)) : 0;
+
+      // Definir o novo ID como maxId + 1
+      const newUserId = maxId + 1;
+      const newUser = { ...userData, id: newUserId };
+
+      const RegisterResponse = await fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(userData),
+        body: JSON.stringify(newUser),
       });
 
-      if (response.ok) {
+      if (RegisterResponse.ok) {
         alert("Usuário cadastrado com sucesso!");
         navigate("/");
       } else {
-        const errorText = await response.text();
+        const errorText = await RegisterResponse.text();
         console.error("Erro ao cadastrar usuário:", errorText);
-        alert("Erro ao cadastrar usuário. Verifique o console para mais detalhes.");
       }
     } catch (error) {
       console.error("Erro ao cadastrar usuário:", error);
