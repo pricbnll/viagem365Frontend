@@ -19,6 +19,7 @@ function AppRoutes() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/home" element={isAuthenticated ? <RegisteUser /> : <Navigate to="/dashboard" />} />
+          {/* <Route path="/home" element={isAuthenticated ? <Navigate to="/dashboard" /> : <RegisterUser />} /> */}
           <Route path="/cadastro" element={<RegisteUser />} />
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/dashboard" element={<Dashboard />} />    
