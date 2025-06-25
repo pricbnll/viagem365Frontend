@@ -233,9 +233,3 @@ Caso tenha alguma dúvida!!
 * Aos melhores colegas de classe de TRIP e NATURE que alguém poderia ter! Este módulo foi mais na raça com ajuda do ChatGPT
 * Qualquer dúvida ou sugestão de melhorar o código eu aceito - algumas escrevi acima!!!
 
-
-## 	📹 Video de apresentação do MiniProjeto 1
-
-No video fiz uma apresentação rápida do projeto com alguns demostrações da plataforma com o objetivo maior de ter uma comunicação mais assertiva, sem  um roteiro pre determinado. 
-
-[Video] - (https://drive.google.com/file/d/1OgXSE1_mt7pw0oXkQGk_N3sNsXzg_H_J/view?usp=drive_link)
