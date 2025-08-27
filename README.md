@@ -15,7 +15,7 @@ A Viagem365 deseja automatizar algumas ações de atendimento, criando um sistem
 
   ## 📉 Diagrama telas
 
-  <img src = "./src/assets/Diagrama de telas.png" />
+  <img style= "width: 400px" src = "./src/assets/Diagrama de telas.png" />
 
 ## 🤖 Como rodar o repositório:
 
